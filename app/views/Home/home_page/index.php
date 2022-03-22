@@ -184,11 +184,11 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Trang Chủ</a>
-                            <a href="shop.html" class="nav-item nav-link">Sản Phẩm</a>
-                            <a href="detail.html" class="nav-item nav-link">Tin Tức</a>
+                            <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
+                            <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
+                            <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="#" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <div class="pt-2">

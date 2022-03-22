@@ -7,4 +7,10 @@ class HomeController extends BaseModel
         require_once './app/views/Home/home_page/index.php';
     }
     // code tiep cac function
+    static function product_page()
+    {
+        require_once './app/views/Home/product/shop.php';
+    }
+
+
 }

@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="<?= $server_port ?>/du_an_1/public/img/favicon.ico" rel="icon">
+    <link href="<?= server_port ?>/du_an_1/public/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,10 +19,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="<?= $server_port ?>/du_an_1/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?= server_port ?>/du_an_1/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?= $server_port ?>/du_an_1/public/css/style.css" rel="stylesheet">
+    <link href="<?= server_port ?>/du_an_1/public/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/logo.jpg" alt="" width="120px" height="80px" srcset="">
+                    <img src="<?= server_port ?>/du_an_1/public/images_stores/img/logo.jpg" alt="" width="120px" height="80px" srcset="">
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
@@ -57,7 +57,7 @@
                         <h4 class="header_cart-heading">sản phẩm đã thêm</h4>
                         <ul class="header_cart_list-items">
                             <li class="header_cart-item">
-                                <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
+                                <img src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
                                 <div class="header_cart-info">
                                     <div class="header_cart_item_head">
                                         <h5 class="header_cart_item-name text-truncate">
@@ -78,7 +78,7 @@
                                 </div>
                             </li>
                             <li class="header_cart-item">
-                                <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
+                                <img src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
                                 <div class="header_cart-info">
                                     <div class="header_cart_item_head">
                                         <h5 class="header_cart_item-name text-truncate">
@@ -98,7 +98,7 @@
                                 </div>
                             </li>
                             <li class="header_cart-item">
-                                <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
+                                <img src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
                                 <div class="header_cart-info">
                                     <div class="header_cart_item_head">
                                         <h5 class="header_cart_item-name text-truncate">
@@ -192,7 +192,7 @@
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <div class="pt-2">
-                                <img src="<?= $server_port ?>/du_an_1/public/img/logo_user.png" alt="" width="40px" height="40px" srcset="">
+                                <img src="<?= server_port ?>/du_an_1/public/images_stores/img/logo_user.png" alt="" width="40px" height="40px" srcset="">
                             </div>
 
                             <!-- <a href="" class="nav-item nav-link">Đăng nhập</a>
@@ -215,11 +215,11 @@
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
-                            <img class="img-fluid" src="<?= $server_port ?>/du_an_1/public/images_stores/img/carousel-1.jpg" alt="Image">
+                            <img class="img-fluid" src="<?= server_port ?>/du_an_1/public/images_stores/img/carousel-1.jpg" alt="Image">
 
                         </div>
                         <div class="carousel-item" style="height: 410px;">
-                            <img class="img-fluid" src="<?= $server_port ?>/du_an_1/public/images_stores/img/carousel-2.jpg" alt="Image">
+                            <img class="img-fluid" src="<?= server_port ?>/du_an_1/public/images_stores/img/carousel-2.jpg" alt="Image">
 
                         </div>
                     </div>
@@ -253,7 +253,7 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
-                        <img height="100px" width="200px" src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (6).jpg" alt="">
+                        <img height="100px" width="200px" src="<?= server_port ?>/du_an_1/public/images_stores/img/images (6).jpg" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
                 </div>
@@ -262,7 +262,7 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
-                        <img height="100px" width="200px" src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (3).jpg" alt="">
+                        <img height="100px" width="200px" src="<?= server_port ?>/du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
                 </div>
@@ -271,7 +271,7 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
-                        <img height="100px" width="200px" src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (3).jpg" alt="">
+                        <img height="100px" width="200px" src="<?= server_port ?>/du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
                 </div>
@@ -280,7 +280,7 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
-                        <img height="100px" width="200px" src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (3).jpg" alt="">
+                        <img height="100px" width="200px" src="<?= server_port ?>/du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
                 </div>
@@ -289,7 +289,7 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
-                        <img height="100px" width="200px" src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (6).jpg" alt="">
+                        <img height="100px" width="200px" src="<?= server_port ?>/du_an_1/public/images_stores/img/images (6).jpg" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Bags</h5>
                 </div>
@@ -298,7 +298,7 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
-                        <img height="100px" width="200px" src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (6).jpg" alt="">
+                        <img height="100px" width="200px" src="<?= server_port ?>/du_an_1/public/images_stores/img/images (6).jpg" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Shoes</h5>
                 </div>
@@ -322,7 +322,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -354,7 +354,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -386,7 +386,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -418,7 +418,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -450,7 +450,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -482,7 +482,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -514,7 +514,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -546,7 +546,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -594,7 +594,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -626,7 +626,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -658,7 +658,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -690,7 +690,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -722,7 +722,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -754,7 +754,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -786,7 +786,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -818,7 +818,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="imgUNcover" src="<?= $server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
+                        <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
@@ -858,22 +858,22 @@
             <div class="col">
                 <div class="owl-carousel vendor-carousel">
                     <div class="vendor-item a border p-4">
-                        <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/images (1).png" alt="">
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img/images (1).png" alt="">
                     </div>
                     <div class="vendor-item a border p-4">
-                        <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/tải xuống (1).png" alt="">
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img/tải xuống (1).png" alt="">
                     </div>
                     <div class="vendor-item a border p-4">
-                        <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/dell.png" alt="">
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img/dell.png" alt="">
                     </div>
                     <div class="vendor-item a border p-4">
-                        <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/apple.png" alt="">
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img/apple.png" alt="">
                     </div>
                     <div class="vendor-item a border p-4">
-                        <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/lenovo.png" alt="">
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img/lenovo.png" alt="">
                     </div>
                     <div class="vendor-item a border p-4">
-                        <img src="<?= $server_port ?>/du_an_1/public/images_stores/img/tải xuống.png" alt="">
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img/tải xuống.png" alt="">
                     </div>
                 </div>
             </div>
@@ -958,7 +958,7 @@
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="<?= $server_port ?>/du_an_1/public/img/payments.png" alt="">
+                <img class="img-fluid" src="<?= server_port ?>/du_an_1/public/img/payments.png" alt="">
             </div>
         </div>
     </div>
@@ -972,15 +972,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= $server_port ?>/du_an_1/public/lib/easing/easing.min.js"></script>
-    <script src="<?= $server_port ?>/du_an_1/public/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="<?= server_port ?>/du_an_1/public/lib/easing/easing.min.js"></script>
+    <script src="<?= server_port ?>/du_an_1/public/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="<?= $server_port ?>/du_an_1/public/mail/jqBootstrapValidation.min.js"></script>
-    <script src="<?= $server_port ?>/du_an_1/public/mail/contact.js"></script>
+    <script src="<?= server_port ?>/du_an_1/public/mail/jqBootstrapValidation.min.js"></script>
+    <script src="<?= server_port ?>/du_an_1/public/mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="<?= $server_port ?>/du_an_1/public/js/main.js"></script>
+    <script src="<?= server_port ?>/du_an_1/public/js/main.js"></script>
 </body>
 
 </html>

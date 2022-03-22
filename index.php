@@ -31,9 +31,9 @@ switch ($url) {
         // 
         break;
     case 'list_product':
-        // 
         AdminController::list_product();
         break;
+        // 
     case 'add_product':
         AdminController::add_product();
         break;

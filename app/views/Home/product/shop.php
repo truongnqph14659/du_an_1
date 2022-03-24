@@ -23,7 +23,7 @@
     <link href="<?= server_port ?>/du_an_1/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?= server_port ?>/du_an_1/public/css/style.css" rel="stylesheet">
+    <link href="<?= server_port ?>/du_an_1/public/css1/product.css" rel="stylesheet">
 </head>
 <body>
 <!-- Topbar Start -->
@@ -133,7 +133,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid mb-5">
         <div class="row border-top px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
+            <!-- <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">Danh mục</h6>
                     <i class="fa fa-angle-down text-dark"></i>
@@ -174,8 +174,8 @@
                         </div>
                     </div>
                 </nav>
-            </div>
-            <div class="col-lg-9">
+            </div> -->
+            <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
@@ -187,9 +187,9 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
                             <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
-                            <a href="detail.html" class="nav-item nav-link">Tin Tức</a>
+                            <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <div class="pt-2">
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                 </nav>
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                <!-- <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
                             <img class="img-fluid" src="<?= server_port ?>/du_an_1/public/images_stores/img/carousel-1.jpg" alt="Image">
@@ -234,11 +234,23 @@
                             <span class="carousel-control-next-icon mb-n2"></span>
                         </div>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <!-- Navbar End -->
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">SẢN PHẨM</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="">Trang chủ</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Sản phẩm</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
     <!-- Shop Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">

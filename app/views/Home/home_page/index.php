@@ -188,7 +188,7 @@
                             <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
                             <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="#" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <div class="pt-2">

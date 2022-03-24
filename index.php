@@ -8,11 +8,14 @@ switch ($url) {
     case '/':
         HomeController::trang_chu();
         break;
-                 // 
-                 case 'product_page':
-                    HomeController::product_page();
-                    break;
+        // 
+    case 'product_page':
+        HomeController::product_page();
+        break;
         // case admin
+    case 'contact_page':
+        HomeController::contact_page();
+        break;
     case 'admin':
         AdminController::admin();
         break;

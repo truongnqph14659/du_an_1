@@ -54,6 +54,7 @@ class AdminController extends BaseModel
     // 
     static function add_category()
     {
+
         include './app/views/admin/component/Category/add-form.php';
     }
     // 

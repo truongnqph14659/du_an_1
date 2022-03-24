@@ -16,44 +16,26 @@
   <div class="content">
     <div class="container-fluid">
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-12">
-          <!-- jquery validation -->
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">Hi<small></small></h3>
+        <div class="col-lg-5">
+          <h3 align="center">them loai hang</h3>
+          <br>
+          <form id="treeview_form" method="post">
+            <div class="form-group">
+              <label for="">chon danh muc cha</label>
+              <select name="parent_category" id="parent_category" class="form-control"></select>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form id="quickForm" action="save_category" method="POST" enctype="multipart/form-data" novalidate="novalidate">
-              <div class="card-body">
-
-
-                <div class="form-group">
-                  <label for="name">Tên sản phẩm</label>
-                  <input type="text" name="name" class="form-control" id="name">
-                </div>
-
-                <div class="form-group">
-                  <label for="slug">Slug</label>
-                  <input type="text" name="slug" class="form-control" id="slug">
-                </div>
-
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Thêm mới</button>
-              </div>
-            </form>
-          </div>
-          <!-- /.card -->
+            <div class="form-group">
+              <label for="">nhập vào tên loại</label>
+              <input type="text" name="category_name" id="category_name" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="submit" name="action" id="action" class="btn btn-info" value="add">
+            </div>
+          </form>
         </div>
-        <!--/.col (left) -->
-        <!-- right column -->
-        <div class="col-md-6">
+        <div class="col-lg-5">
 
         </div>
-        <!--/.col (right) -->
       </div>
       <!-- /.row -->
     </div>
@@ -63,7 +45,7 @@
 <?php
 require_once './vender/src_script_admin.php';
 ?>
-<script>
+<!-- <script>
   $(function() {
     $.validator.setDefaults({
 
@@ -101,6 +83,21 @@ require_once './vender/src_script_admin.php';
       }
     });
   });
+</script> -->
+<script>
+  $(document).ready(function() {
+    fill_category()
+
+    function fill_category() {
+      $.ajax({
+        url: 'fill_category',
+        success: function(data) {
+          $('#parent_category').html(data)
+        }
+      })
+    }
+    $()
+  })
 </script>
 <?php
 require_once './app/views/admin/footer.php';

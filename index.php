@@ -8,10 +8,13 @@ switch ($url) {
     case '/':
         HomeController::trang_chu();
         break;
-                 // 
-                 case 'product_page':
-                    HomeController::product_page();
-                    break;
+        // 
+    case 'product_page':
+        HomeController::product_page();
+        break;
+    case 'product_detail':
+        HomeController::product_detai();
+        break;
         // case admin
     case 'admin':
         AdminController::admin();
@@ -66,7 +69,9 @@ switch ($url) {
     case 'order_detail':
         AdminController::order_details();
         break;
-
+    case 'fill_category':
+        require_once './app/controller/Fetch_Data/fetch_loai_sp.php';
+        break;
     default:
         echo "duong dan khong ton tai";
         break;

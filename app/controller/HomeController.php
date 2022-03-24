@@ -11,8 +11,9 @@ class HomeController extends BaseModel
     {
         require_once './app/views/Home/product/shop.php';
     }
-
     static function contact_page()
+    {
         require_once './app/views/Home/contact/contact.php';
+    }
 
 }

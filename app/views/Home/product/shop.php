@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,10 +22,11 @@
     <link href="<?= server_port ?>/du_an_1/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?= server_port ?>/du_an_1/public/css/style.css" rel="stylesheet">
+    <link href="<?= server_port ?>/du_an_1/public/css1/product.css" rel="stylesheet">
 </head>
+
 <body>
-<!-- Topbar Start -->
+    <!-- Topbar Start -->
     <div class="container-fluid header_bg">
 
         <div class="row align-items-center py-3 px-xl-5">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <!-- Topbar End -->
@@ -133,7 +133,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid mb-5">
         <div class="row border-top px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
+            <!-- <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">Danh mục</h6>
                     <i class="fa fa-angle-down text-dark"></i>
@@ -174,8 +174,8 @@
                         </div>
                     </div>
                 </nav>
-            </div>
-            <div class="col-lg-9">
+            </div> -->
+            <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
@@ -187,9 +187,9 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
                             <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
-                            <a href="detail.html" class="nav-item nav-link">Tin Tức</a>
+                            <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <div class="pt-2">
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                 </nav>
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                <!-- <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
                             <img class="img-fluid" src="<?= server_port ?>/du_an_1/public/images_stores/img/carousel-1.jpg" alt="Image">
@@ -234,11 +234,23 @@
                             <span class="carousel-control-next-icon mb-n2"></span>
                         </div>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <!-- Navbar End -->
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">SẢN PHẨM</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="">Trang chủ</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Sản phẩm</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
     <!-- Shop Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
@@ -273,11 +285,11 @@
                             <label class="custom-control-label" for="price-4">20.000.000 - 50.000.000</label>
                             <span class="badge border font-weight-normal">29</span>
                         </div>
-                        
+
                     </form>
                 </div>
                 <!-- Price End -->
-                
+
                 <!-- CPU Start -->
                 <div class="border-bottom mb-4 pb-4">
                     <h5 class="font-weight-semi-bold mb-4">Lọc Theo CPU</h5>
@@ -307,7 +319,7 @@
                             <label class="custom-control-label" for="color-4">Amd</label>
                             <span class="badge border font-weight-normal">145</span>
                         </div>
-                        
+
                     </form>
                 </div>
                 <!-- CPU End -->
@@ -341,7 +353,7 @@
                             <label class="custom-control-label" for="size-4">16gb</label>
                             <span class="badge border font-weight-normal">45</span>
                         </div>
-                        
+
                     </form>
                 </div>
                 <!-- Ram End -->
@@ -369,8 +381,8 @@
                             <label class="custom-control-label" for="size-3">15.6 inch</label>
                             <span class="badge border font-weight-normal">246</span>
                         </div>
-                        
-                        
+
+
                     </form>
                 </div>
                 <!-- inch End -->
@@ -394,10 +406,9 @@
                                 </div>
                             </form>
                             <div class="dropdown ml-4">
-                                <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                            Sort by
-                                        </button>
+                                <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Sort by
+                                </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
                                     <a class="dropdown-item" href="#">Latest</a>
                                     <a class="dropdown-item" href="#">Popularity</a>
@@ -406,313 +417,78 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
+                    <?php foreach ($data_sp as $values) : ?>
+                        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                            <div class="card product-item border-0 mb-4">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
+                                        <h6 class="text-truncate mb-3">
+                                            <?php
+                                            $string_ten = (strlen($values["ten_sp"]) > 25) ? substr($values["ten_sp"], 0, 25) . '...' : $values["ten_sp"];
+                                            echo $string_ten;
+                                            ?>
+                                        </h6>
+                                    </a>
+                                    <ul class="ul_products list-unstyled">
+                                        <li>
+                                            <?php
+                                            $string_cpu = (strlen($values["CPU"]) > 15) ? substr($values["CPU"], 0, 15) . '...' : $values["CPU"];
+                                            echo $string_cpu;
+                                            ?>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <?php
+                                                $string_ram = (strlen($values["RAM"]) > 4) ? substr($values["RAM"], 0, 6) . '...' : $values["RAM"];
+                                                $string_rom = (strlen($values["ROM"]) > 4) ? substr($values["ROM"], 0, 11) . '...' : $values["ROM"];
+                                                echo $string_ram . ' / ' . $string_rom;
+                                                ?>
+                                        </li>
+                                        <li>
+                                            <?php
+                                            $string_vga = (strlen($values["VGA"]) > 15) ? substr($values["VGA"], 0, 10) . '...' : $values["VGA"];
+                                            echo $string_vga;
+                                            ?>
+                                        </li>
+                                        <li>
+                                            <?= $values["man_hinh"] . ' ' ?> inch
+                                        </li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 class="price"><?= number_format($values["don_gia"]) ?>đ</h6>
+                                        <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between bg-light border">
+                                    <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
+                                    <div class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></div>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <img class="imgUNcover" src="<?= server_port ?>/du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" alt="">
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <h6 class="text-truncate mb-3"> Acer Gaming Nitro 5</h6>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        Ryzen 5 5600H
-                                    </li>
-                                    <li>
-                                        8GB Ram 512GB SSD
-                                    </li>
-                                    <li>
-                                        GTX1650 4G
-                                    </li>
-                                    <li>
-                                        15.6 inch FHD
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price">13.230.000đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
-                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
+
                     <div class="col-12 pb-1">
                         <nav aria-label="Page navigation">
-                          <ul class="pagination justify-content-center mb-3">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                              </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                              </a>
-                            </li>
-                          </ul>
+                            <ul class="pagination justify-content-center mb-3">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
@@ -723,8 +499,8 @@
     <!-- Shop End -->
 
 
-        <!-- Footer Start -->
-        <div class="container-fluid footer text-light mt-5 pt-5">
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-light mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <a href="" class="text-decoration-none">

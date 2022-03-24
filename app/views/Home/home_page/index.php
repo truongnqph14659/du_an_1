@@ -188,7 +188,7 @@
                             <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
                             <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="#" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             <div class="pt-2">
@@ -253,7 +253,6 @@
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>

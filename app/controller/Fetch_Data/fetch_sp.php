@@ -15,7 +15,7 @@ class fetch_sp extends BaseModel
     static function top_products()
     {
         $model = new static;
-        $sql = "SELECT * FROM san_pham JOIN chi_tiet_sp ON san_pham.ma_san_pham = chi_tiet_sp.ma_san_pham WHERE sl_luu_kho > 0 ORDER BY so_luot_xem DESC LIMIT 5";
+        $sql = "SELECT * FROM san_pham JOIN chi_tiet_sp ON san_pham.ma_san_pham = chi_tiet_sp.ma_san_pham WHERE sl_luu_kho > 0 ORDER BY so_luot_xem DESC LIMIT 8";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

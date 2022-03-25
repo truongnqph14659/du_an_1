@@ -16,8 +16,8 @@ $id_sp = $_GET['id_sp'];
 $data_sp = fetch_one_sp::Get_Data_Private_Sp($id_sp);
 // dành cho comment sản phẩm tiếp
 echo "<pre>";
-var_dump($data_sp);
-die;
+// var_dump($data_sp);
+// die;
 if ($data_sp) {
     extract($data_sp);
     $view_sp = $so_luot_xem + 1;

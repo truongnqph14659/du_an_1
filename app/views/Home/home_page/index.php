@@ -186,7 +186,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
                             <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
-                            <a href="#" class="nav-item nav-link">Tin Tức</a>
+                            <a href="product_detai" class="nav-item nav-link">Tin Tức</a>
 
                             <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
                         </div>

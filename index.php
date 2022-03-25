@@ -12,6 +12,9 @@ switch ($url) {
     case 'product_page':
         HomeController::product_page();
         break;
+    case 'product_detail':
+        HomeController::product_detai();
+        break;
         // case admin
     case 'contact_page':
         HomeController::contact_page();

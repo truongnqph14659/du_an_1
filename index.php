@@ -13,7 +13,18 @@ switch ($url) {
         HomeController::product_page();
         break;
     case 'product_detail':
-        HomeController::product_detail();
+        HomeController::product_detai();
+        break;
+    case 'cart_lists':
+        HomeController::add_to_cart();
+        break;
+        // cart
+    case 'cart':
+        HomeController::cart();
+        break;
+        // delete cart list
+    case 'delete_cart_item':
+        HomeController::delete_cart_item();
         break;
         // case admin
     case 'contact_page':
@@ -74,6 +85,11 @@ switch ($url) {
         break;
     case 'fill_category':
         require_once './app/controller/Fetch_Data/fetch_loai_sp.php';
+        break;
+        // case test của nguyễn quang trường
+    case 'unset':
+        unset($_SESSION['list_cart']);
+        header('location: index.php');
         break;
     default:
         echo "duong dan khong ton tai";

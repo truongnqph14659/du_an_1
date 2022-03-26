@@ -27,107 +27,10 @@
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid header_bg">
-
-        <div class="row align-items-center py-3 px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a href="" class="text-decoration-none">
-                    <img src="<?= server_port ?>du_an_1/public/images_stores/img/logo.jpg" alt="" width="120px" height="80px" srcset="">
-                </a>
-            </div>
-            <div class="col-lg-6 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="tìm kiếm sản phẩm">
-                        <div class="input-group-append search">
-                            <button type="submit" class="input-group-text bg-transparent .text-dark">
-                                <i class="fa fa-search "></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-3 col-6 text-right">
-                <div class="cart_list">
-                    <div class="btn border">
-                        <i class="fas fa-shopping-cart text-white "></i>
-                        <span class="badge text-white">0</span>
-                    </div>
-                    <div class="cart_list_info">
-                        <h4 class="header_cart-heading">sản phẩm đã thêm</h4>
-                        <ul class="header_cart_list-items">
-                            <li class="header_cart-item">
-                                <img src="<?= server_port ?>du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
-                                <div class="header_cart-info">
-                                    <div class="header_cart_item_head">
-                                        <h5 class="header_cart_item-name text-truncate">
-                                            Acer Gaming Nitro 5 Acer Gaming Nitro 5 Acer Gaming Nitro 5 Acer Gaming
-                                            Nitro 5
-                                        </h5>
-                                        <div class="header_cart_item-price-wrap">
-                                            <span class="header_cart_item-price">
-                                                13.230.000đ
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="header_cart_item-body">
-                                        <span class="header_cart_item-description">
-                                            màu: Đen
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="header_cart-item">
-                                <img src="<?= server_port ?>du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
-                                <div class="header_cart-info">
-                                    <div class="header_cart_item_head">
-                                        <h5 class="header_cart_item-name text-truncate">
-                                            Acer Gaming Nitro 5
-                                        </h5>
-                                        <div class="header_cart_item-price-wrap">
-                                            <span class="header_cart_item-price">
-                                                13.230.000đ
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="header_cart_item-body">
-                                        <span class="header_cart_item-description">
-                                            màu: Đen
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="header_cart-item">
-                                <img src="<?= server_port ?>du_an_1/public/images_stores/img/62692_laptop_acer_gaming_nitro_5_25.jpg" class="header_cart-img" alt="" srcset="">
-                                <div class="header_cart-info">
-                                    <div class="header_cart_item_head">
-                                        <h5 class="header_cart_item-name text-truncate">
-                                            Acer Gaming Nitro 5
-                                        </h5>
-                                        <div class="header_cart_item-price-wrap">
-                                            <span class="header_cart_item-price">
-                                                13.230.000đ
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="header_cart_item-body">
-                                        <span class="header_cart_item-description">
-                                            màu: Đen
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <a href="#" class="text-decoration-none bg-success text-white cart text-capitalize float-end rounded-0 mx-2">Xem
-                            giỏ
-                            hàng</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+    require_once './vender/file_extends/header_cart.php';
+    ?>
     <!-- Topbar End -->
-
 
     <!-- Navbar Start -->
     <div class="container-fluid mb-5">
@@ -186,30 +89,13 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
                             <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
-                            <a href="product_detai" class="nav-item nav-link">Tin Tức</a>
+                            <a href="#" class="nav-item nav-link">Tin Tức</a>
 
                             <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
                         </div>
-                        <div class="navbar-nav ml-auto py-0">
-                            <div class="pt-2">
-                                <img src="<?= server_port ?>du_an_1/public/images_stores/img/logo_user.png" alt="" width="40px" height="40px" srcset="">
-                            </div>
-
-                            <!-- <a href="" class="nav-item nav-link">Đăng nhập</a>
-                            <a href="" class="nav-item nav-link">Đăng ký</a> -->
-
-                            <div class="action_user">
-                                <p style="color:red; margin-bottom: 0rem;">Tài khoản</p>
-                                <span class="user_name dropdown-toggle text-dark" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Nguyễn Quang Trường
-                                </span>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item text-dark" href="user_info">tài khoản của tôi</a></li>
-                                    <li><a class="dropdown-item text-dark" href="re_password">đổi mật khẩu</a></li>
-                                    <li><a class="dropdown-item text-dark" href="logn_out">đăng xuất</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php
+                        require_once './vender/file_extends/header_acc.php';
+                        ?>
                     </div>
                 </nav>
 
@@ -354,7 +240,16 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
-                            <div class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></div>
+                            <button class="btn btn-sm text-dark p-0 ">
+                                <?php
+                                $id_user = 'none';
+                                $quantity = 1;
+                                if (isset($_SESSION['user_account']['user_id'])) {
+                                    $id_user = $_SESSION['user_account']['user_id'];
+                                }
+                                ?>
+                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -422,7 +317,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
-                            <div class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></div>
+                            <button class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1 submit" data-id="<?php echo $values["ma_san_pham"] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i></button>
                         </div>
                     </div>
                 </div>
@@ -584,6 +479,35 @@
             },
         });
     </script>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>
+        $(".submit").each((index, add_cart) => {
+            add_cart.addEventListener("click", () => {
+                const id_sp = $(add_cart).data("id");
+                const user_id = $(add_cart).data("user");
+                const quantity = $(add_cart).data("qty");
+                $.ajax({
+                    type: "POST",
+                    url: "cart_lists",
+                    data: {
+                        id_sp: id_sp,
+                        user_id: user_id,
+                        quantity: quantity
+                    },
+                    success: function(data) {
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, "slow");
+                        $(".cart_list").html(data);
+                    }
+                });
+            })
+        })
+    </script>
+
+
 </body>
 
 </html>

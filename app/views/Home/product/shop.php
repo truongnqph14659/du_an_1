@@ -256,7 +256,16 @@
                                 </div>
                                 <div class="card-footer d-flex justify-content-between bg-light border">
                                     <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
-                                    <div class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i></div>
+                                    <button class="btn btn-sm text-dark p-0 ">
+                                        <?php
+                                        $id_user = 'none';
+                                        $quantity = 1;
+                                        if (isset($_SESSION['user_account']['user_id'])) {
+                                            $id_user = $_SESSION['user_account']['user_id'];
+                                        }
+                                        ?>
+                                        <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -306,6 +315,9 @@
     <script src="<?= server_port ?>/du_an_1/public/mail/contact.js"></script>
     <!-- Template Javascript -->
     <script src="<?= server_port ?>/du_an_1/public/js/main.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="<?= server_port ?>du_an_1/public/js/ajax_cart_list.js"></script>
 </body>
 
 </html>

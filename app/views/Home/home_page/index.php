@@ -33,7 +33,7 @@
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <div class="container-fluid mb-5">
+    <div class="container-fluid mb-2">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
@@ -316,8 +316,17 @@
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
-                            <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
-                            <button class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1 submit" data-id="<?php echo $values["ma_san_pham"] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i></button>
+                            <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
+                            <button class="btn btn-sm text-dark p-0 ">
+                                <?php
+                                $id_user = 'none';
+                                $quantity = 1;
+                                if (isset($_SESSION['user_account']['user_id'])) {
+                                    $id_user = $_SESSION['user_account']['user_id'];
+                                }
+                                ?>
+                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -479,33 +488,9 @@
             },
         });
     </script>
-
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    <script>
-        $(".submit").each((index, add_cart) => {
-            add_cart.addEventListener("click", () => {
-                const id_sp = $(add_cart).data("id");
-                const user_id = $(add_cart).data("user");
-                const quantity = $(add_cart).data("qty");
-                $.ajax({
-                    type: "POST",
-                    url: "cart_lists",
-                    data: {
-                        id_sp: id_sp,
-                        user_id: user_id,
-                        quantity: quantity
-                    },
-                    success: function(data) {
-                        $("html, body").animate({
-                            scrollTop: 0
-                        }, "slow");
-                        $(".cart_list").html(data);
-                    }
-                });
-            })
-        })
-    </script>
+    <script src="<?= server_port ?>du_an_1/public/js/ajax_cart_list.js"></script>
 
 
 </body>

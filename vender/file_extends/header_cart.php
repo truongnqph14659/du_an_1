@@ -33,7 +33,7 @@
                         ?>
                     </span>
                 </div>
-                <?php if (isset($_SESSION['list_cart'])) : ?>
+                <?php if (isset($_SESSION['list_cart']) && count($_SESSION['list_cart']) > 0) : ?>
                     <div class="cart_list_info">
                         <h4 class="header_cart-heading">sản phẩm đã thêm</h4>
                         <ul class="header_cart_list-items">

@@ -56,7 +56,7 @@
                                     </th>
                                     <td class="b"><?= $_SESSION['list_cart'][$orders]['ten_sp'] ?></td>
                                     <td class="c price_item"><?= number_format($_SESSION['list_cart'][$orders]['don_gia']) ?></td>
-                                    <td class="c"><input type="number" min="1" max="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
+                                    <td class="c"><input type="number" min="1" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
                                     <td class="c tong_tien_item">
                                         <?php
                                         $thanh_tien = number_format($_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity']);
@@ -97,18 +97,6 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="payment_shipping">giảm giá
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="price_text">tổng tiền:</td>
-                                <td class="price_number">
-                                    <?php
-                                    $tong_tien = 0;
-                                    foreach ($_SESSION['list_cart'] as $orders => $values) {
-                                        $tong_tien +=  $_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity'];
-                                    }
-                                    echo number_format($tong_tien) . "đ";
-                                    ?>
                                 </td>
                             </tr>
                             <tr>

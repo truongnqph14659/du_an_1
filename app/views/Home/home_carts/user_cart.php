@@ -96,7 +96,21 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="payment_shipping">giảm giá
+                                <td class="price_text">giảm giá:</td>
+                                <td class="giam_gia">
+                                    0đ
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="price_text">tổng tiền:</td>
+                                <td class="price_number_tong">
+                                    <?php
+                                    $tong_tien = 0;
+                                    foreach ($_SESSION['list_cart'] as $orders => $values) {
+                                        $tong_tien +=  $_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity'];
+                                    }
+                                    echo number_format($tong_tien) . "đ";
+                                    ?>
                                 </td>
                             </tr>
                             <tr>
@@ -188,11 +202,14 @@
         function tong_tien() {
             var tong = 0;
             var hien_thi_tt = document.querySelector('.price_number')
+            var hien_thi_tt_tong = document.querySelector('.price_number_tong')
             var tong_tien = document.querySelectorAll('.tong_tien_item');
             tong_tien.forEach((price_item) => {
                 tong += Number(price_item.innerHTML.toString().replace(/,|đ/g, ""))
             })
             hien_thi_tt.innerHTML = tong.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "đ";
+            // phần này sẽ tính nếu có giảm giá
+            hien_thi_tt_tong.innerHTML = tong.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "đ";
         }
         c()
 

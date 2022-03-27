@@ -38,7 +38,9 @@ if (count($_SESSION['list_cart']) == 0) {
             '<div class="header_cart_item-price-wrap">
      <span class="header_cart_item-price">'
             . number_format($_SESSION['list_cart'][$orders]['don_gia']) .
-            '</div>
+            '<span class="text-decoration-line-through">x</span>
+            <span class="quantity_item text-decoration-line-through">' . $_SESSION['list_cart'][$orders]['quantity'] . '</span>
+            </div>
      </div>' .
             '<div class="header_cart_item-body">
      <span class="header_cart_item-description">

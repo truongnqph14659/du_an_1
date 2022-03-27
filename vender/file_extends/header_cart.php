@@ -50,7 +50,8 @@
                                                     <span class="header_cart_item-price">
                                                         <?= isset($_SESSION['list_cart']) == true ? number_format($_SESSION['list_cart'][$orders]['don_gia']) : '' ?>
                                                     </span>
-
+                                                    <span class="quantity_style">x</span>
+                                                    <span class="quantity_item quantity_style"><?= $_SESSION['list_cart'][$orders]['quantity'] ?></span>
                                                 </div>
                                             </div>
                                             <div class="header_cart_item-body">

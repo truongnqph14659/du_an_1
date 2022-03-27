@@ -26,6 +26,14 @@ switch ($url) {
     case 'delete_cart_item':
         HomeController::delete_cart_item();
         break;
+        // re_quantity
+    case 're_quantity':
+        HomeController::re_quantity();
+        break;
+        // 
+    case 'Create_Order':
+        HomeController::Create_Order();
+        break;
         // case admin
     case 'contact_page':
         HomeController::contact_page();

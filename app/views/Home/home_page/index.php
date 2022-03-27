@@ -242,11 +242,11 @@
                             <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
                             <button class="btn btn-sm text-dark p-0 ">
                                 <?php
-                                $id_user = 'none';
+                                $id_user = 1;
                                 $quantity = 1;
-                                if (isset($_SESSION['user_account']['user_id'])) {
-                                    $id_user = $_SESSION['user_account']['user_id'];
-                                }
+                                // if (isset($_SESSION['user_account']['user_id'])) {
+                                //     $id_user = $_SESSION['user_account']['user_id'];
+                                // }
                                 ?>
                                 <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
                             </button>
@@ -319,13 +319,13 @@
                             <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
                             <button class="btn btn-sm text-dark p-0 ">
                                 <?php
-                                $id_user = 'none';
                                 $quantity = 1;
-                                if (isset($_SESSION['user_account']['user_id'])) {
-                                    $id_user = $_SESSION['user_account']['user_id'];
-                                }
+                                $id_user = 1;
+                                // if (isset($_SESSION['user_account']['user_id'])) {
+                                //     $id_user = $_SESSION['user_account']['user_id'];
+                                // }
                                 ?>
-                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values["ma_san_pham"] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
                             </button>
                         </div>
                     </div>
@@ -458,11 +458,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="<?= server_port ?>du_an_1/public/lib/easing/easing.min.js"></script>
     <script src="<?= server_port ?>/du_an_1/public/lib/owlcarousel/owl.carousel.min.js"></script>
-
     <!-- Contact Javascript File -->
     <script src="<?= server_port ?>du_an_1/public/mail/jqBootstrapValidation.min.js"></script>
     <script src="<?= server_port ?>du_an_1/public/mail/contact.js"></script>
-
     <!-- Template Javascript -->
     <script src="<?= server_port ?>du_an_1/public/js/main.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -491,8 +489,15 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="<?= server_port ?>du_an_1/public/js/ajax_cart_list.js"></script>
-
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <?php if (isset($_SESSION["check_success"])) : ?>
+        <script>
+            swal("Xin chào!", "đặt hàng thành công", "success");
+        </script>
+        <?php
+        unset($_SESSION["check_success"]);
+        ?>
+    <?php endif ?>
 </body>
 
 </html>

@@ -56,7 +56,7 @@
                                     </th>
                                     <td class="b"><?= $_SESSION['list_cart'][$orders]['ten_sp'] ?></td>
                                     <td class="c price_item"><?= number_format($_SESSION['list_cart'][$orders]['don_gia']) ?></td>
-                                    <td class="c"><input type="number" min="1" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
+                                    <td class="c"><input type="number" min="1" data-discount="<?= $_SESSION['list_cart'][$orders]['giam_gia'] ?>" data-item="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>" data-price="<?php echo $_SESSION['list_cart'][$orders]['don_gia'] ?>" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
                                     <td class="c tong_tien_item">
                                         <?php
                                         $thanh_tien = number_format($_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity']);
@@ -115,8 +115,9 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <div class="payment_button">
-                                        <a href="#">thanh toán</a>
+                                    <!-- đang fake id_user đã đăng nhập để test chức năng đặt hàng -->
+                                    <div>
+                                        <a class="payment_button" href="Create_Order?id_user=1">thanh toán</a>
                                     </div>
                                 </td>
                             </tr>
@@ -176,7 +177,7 @@
 
         function check_action(event) {
             var Input = event.target;
-            if (isNaN(Input.value) || Input.value <= 0) {
+            if (isNaN(Input.value) || Input.value <= 0 || Input.value > <?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>) {
                 var newdata = Input.value = 1;
                 var parent_tr = Input.parentElement.parentElement;
                 parent_tr.querySelector('.tong_tien_item').innerHTML = (newdata * parent_tr.querySelector('.price_item').innerHTML.replace(/,/g, "")).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "đ"
@@ -186,16 +187,33 @@
 
         function c() {
             // chỗ này là đã có function cho sự thay đổi oninput cho quntity_order
-            var tr_data_cart = document.getElementsByClassName('tr_data_cart')
             var get_input_value = document.getElementsByClassName('quantity_order')
-            for (var i = 0; i < tr_data_cart.length; i++) {
-                get_input_value[i].addEventListener('input', (eval) => {
+            $('.tr_data_cart').each((index, item_input) => {
+                item_input.addEventListener('input', (eval) => {
                     var parent = eval.target.parentElement.parentElement
                     var kq = parent.querySelector('.price_item').innerHTML.replace(/,/g, "") * eval.target.value
                     parent.querySelector('.tong_tien_item').innerHTML = kq.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "đ"
+                    var input_element = parent.querySelector('.quantity_order')
+                    var id_sp = $(input_element).data('item')
+                    var price = $(input_element).data('price')
+                    var discount = $(input_element).data('discount')
+                    var quantity = $(input_element).val();
+                    $.ajax({
+                        type: "POST",
+                        url: "re_quantity",
+                        data: {
+                            id_sp: id_sp,
+                            quantity: quantity,
+                            price: price,
+                            discount: discount
+                        },
+                        success: function(data) {
+                            $(".cart_list").html(data);
+                        }
+                    });
                     tong_tien()
                 })
-            }
+            })
 
         }
 

@@ -22,6 +22,7 @@ if (isset($_SESSION['list_cart'])) {
                 'ma_loai' => $ma_loai_sp,
                 'id_user' => $user_id,
                 'quantity' => $quantity,
+                'tam_tinh' => ($quantity * $don_gia) - $giam_gia,
                 'thoi_gian_giam_gia' => $thoi_gian_giam_gia,
                 'ma_option' => $ma_option,
                 'ma_ct_sp' => $ma_ct_sp,
@@ -53,6 +54,7 @@ if (!$flag) {
             'ma_loai' => $ma_loai_sp,
             'id_user' => $user_id,
             'quantity' => $quantity,
+            'tam_tinh' => ($quantity * $don_gia) - $giam_gia,
             'thoi_gian_giam_gia' => $thoi_gian_giam_gia,
             'ma_option' => $ma_option,
             'ma_ct_sp' => $ma_ct_sp,
@@ -88,8 +90,10 @@ foreach ($_SESSION['list_cart'] as $orders => $values) {
         '</h5>' .
         '<div class="header_cart_item-price-wrap">
      <span class="header_cart_item-price">'
-        . number_format($_SESSION['list_cart'][$orders]['don_gia']) .
-        '</div>
+        . number_format($_SESSION['list_cart'][$orders]['don_gia']) . '
+        <span class="quantity_style">x</span>
+        <span class="quantity_item quantity_style">' . $_SESSION['list_cart'][$orders]['quantity'] . '</span>
+        </div>
      </div>' .
         '<div class="header_cart_item-body">
      <span class="header_cart_item-description">

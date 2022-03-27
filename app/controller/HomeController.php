@@ -37,4 +37,14 @@ class HomeController
     {
         require_once './app/controller/Delete_Data/delete_cart_list.php';
     }
+    //re_quantity
+    static function re_quantity()
+    {
+        require_once './app/controller/Change_Data/Re_Quantity.php';
+    }
+    // create order
+    static function Create_Order()
+    {
+        require_once './app/controller/Insert_Data/InsertOrder.php';
+    }
 }

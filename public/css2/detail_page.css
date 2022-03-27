@@ -148,6 +148,13 @@ dl {
 .ul_products li {
   padding-left: 0;
 }
+/* cart */
+.quantity_style {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6f6f6f;
+}
 /* css not mine============ */
 * {
   font-family: sans-serif;

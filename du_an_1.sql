@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 24, 2022 lúc 06:45 PM
+-- Thời gian đã tạo: Th3 27, 2022 lúc 08:28 PM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.7
 
@@ -63,7 +63,8 @@ INSERT INTO `chi_tiet_sp` (`ma_ct_sp`, `chung_loai`, `part_number`, `mau_sac`, `
 (2, 'Samsung', 'UAV123TR', 'Trắng', 'Intel Core i7', '16GB', 'không', 'SSD 250GB', 135, 9),
 (3, 'Dell', '455TR34', 'Bạch Kim', 'Intel Core i7-1165G7 (12MB, upto 4.70GHz)', '8GB DDR4 3200MHz (1x8GB)', 'NVIDIA GeForce MX330 2GB GDDR5', 'SSD 512GB M.2 PCIe NVMe 3x4', 146, 6),
 (4, 'Macbook', '443TR6382', 'Trắng', 'Apple M1 chip 8-core', '8GB', '7-core GPU', '\r\nSSD 256GB', 137, 5),
-(5, 'Lenovo', '56TR3423', 'Đen', 'AMD Ryzen R5 5600H', '32GB', 'NVIDIA GeForce RTX 3060 6GB GDDR6', '512GB M.2 2280 SSD up to 1TB', 154, 10);
+(5, 'Lenovo', '56TR3423', 'Đen', 'AMD Ryzen R5 5600H', '32GB', 'NVIDIA GeForce RTX 3060 6GB GDDR6', '512GB M.2 2280 SSD up to 1TB', 154, 10),
+(6, 'Acer', 'TR4424E', 'Đen', 'i51 035G11.00 GHz', '8GB DDR4', 'Card rời, MX330 2GB', '8GB', 134, 11);
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,8 @@ INSERT INTO `loai_san_pham` (`ma_loai_sp`, `ten_loai`, `parent_id`, `slug`) VALU
 (3, 'Macbook', 0, 'Macbook'),
 (4, 'Samsung', 0, 'Samsung'),
 (5, 'MSI', 0, 'MSI'),
-(6, 'Lennovo', 0, 'Lennovo');
+(6, 'Lennovo', 0, 'Lennovo'),
+(7, 'acer', 0, 'acer');
 
 -- --------------------------------------------------------
 
@@ -134,8 +136,17 @@ INSERT INTO `options` (`ma_option`, `RAM`, `ROM`, `don_gia`) VALUES
 CREATE TABLE `orders` (
   `id_order` int(10) NOT NULL,
   `user_id` int(10) NOT NULL,
-  `order_date` date NOT NULL
+  `order_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`id_order`, `user_id`, `order_date`) VALUES
+(6, 1, '2022-03-28'),
+(7, 1, '2022-03-28'),
+(8, 1, '2022-03-28');
 
 -- --------------------------------------------------------
 
@@ -148,10 +159,21 @@ CREATE TABLE `order_details` (
   `so_luong` int(10) NOT NULL,
   `don_gia` float NOT NULL,
   `thanh_tien` float NOT NULL,
-  `discount` float NOT NULL,
+  `discount` float NOT NULL DEFAULT 0,
   `id_order` int(10) NOT NULL,
   `ma_san_pham` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_details`
+--
+
+INSERT INTO `order_details` (`id_order_detail`, `so_luong`, `don_gia`, `thanh_tien`, `discount`, `id_order`, `ma_san_pham`) VALUES
+(1, 1, 10790000, 10790000, 0, 6, 4),
+(2, 1, 20790000, 20790000, 0, 7, 9),
+(3, 4, 10790000, 43160000, 0, 8, 4),
+(4, 2, 20790000, 41580000, 0, 8, 9),
+(5, 1, 9590000, 9590000, 0, 8, 10);
 
 -- --------------------------------------------------------
 
@@ -181,10 +203,11 @@ CREATE TABLE `san_pham` (
 
 INSERT INTO `san_pham` (`ma_san_pham`, `ten_sp`, `don_gia`, `giam_gia`, `images_sp`, `dac_biet`, `so_luot_xem`, `ngay_nhap`, `sl_luu_kho`, `images_banner_sp`, `thoi_gian_giam_gia`, `ma_loai_sp`, `ma_option`) VALUES
 (4, 'Laptop Asus VivoBook 15 X515EP-EJ449W', 10790000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/asusu.jpg', 0, 2, '2022-03-09', 30, NULL, NULL, 1, NULL),
-(5, 'MacBook Air 13 inch 2020 M1 MGN63SA/A', 20790000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/macbook.jpg', 1, 0, '2022-03-07', 20, 'http://localhost:80/du_an_1/public/images_stores/img/banner.jpg', NULL, 3, NULL),
-(6, 'Laptop Dell Vostro 3400 V4I7015W1', 19590000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/dell.jpg', 1, 0, '2022-03-02', 0, 'http://localhost:80/du_an_1/public/images_stores/img/banner2.jpg', NULL, 2, NULL),
+(5, 'MacBook Air 13 inch 2020 M1 MGN63SA/A', 20790000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/macbook.jpg', 1, 0, '2022-03-07', 20, 'http://localhost:80/du_an_1/public/images_stores/img/banner4.jpg', NULL, 3, NULL),
+(6, 'Laptop Dell Vostro 3400 V4I7015W1', 19590000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/dell.jpg', 1, 0, '2022-03-02', 0, 'http://localhost:80/du_an_1/public/images_stores/img/banner6.jpg', NULL, 2, NULL),
 (9, 'Samsung Galaxy Book Flex', 20790000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/samsung.jpg', 1, 0, '2022-03-18', 7, NULL, NULL, 4, NULL),
-(10, 'Laptop Lenovo IdeaPad Slim 5 ', 9590000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/lenovo.jpg', 0, 0, '2022-03-18', 10, 'http://localhost:80/du_an_1/public/images_stores/img/banner3.jpg', NULL, 6, NULL);
+(10, 'Laptop Lenovo IdeaPad Slim 5 ', 9590000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/lenovo.jpg', 0, 0, '2022-03-18', 10, 'http://localhost:80/du_an_1/public/images_stores/img/banner3.png', NULL, 6, NULL),
+(11, 'Laptop Acer Aspire 3 A315 57G 573F i5 1035G1', 10790000, 0.00, 'http://localhost:80/du_an_1/public/images_stores/img/acer3.jpg', 1, 0, '2022-03-03', 20, 'http://localhost:80/du_an_1/public/images_stores/img/banner3.png', '2022-03-02', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -206,6 +229,14 @@ CREATE TABLE `user` (
   `tinh_thanh` varchar(255) NOT NULL,
   `sdt` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `image`, `email`, `password`, `role`, `status`, `dia_chi`, `xa_phuong`, `quan_huyen`, `tinh_thanh`, `sdt`) VALUES
+(1, 'Trường Nguyễn', 'http://localhost/du_an_1/public/images_stores/img/logo_user.png', 'truongrubi717@gmail.com', '1234', 0, 1, '123 tan xuân', 'xuân đỉnh', 'bắc từ liêm', 'hà nội', '0869919717'),
+(2, 'Ngọc Diệu', 'http://localhost/du_an_1/public/images_stores/img/logo_user.png', 'dieurubi717@gmail.com', '1234', 0, 1, '21 tân xuân', 'xuân đỉnh', 'bắc từ liêm', 'hà nội', '0869919718');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -288,7 +319,7 @@ ALTER TABLE `binh_luan`
 -- AUTO_INCREMENT cho bảng `chi_tiet_sp`
 --
 ALTER TABLE `chi_tiet_sp`
-  MODIFY `ma_ct_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ma_ct_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `library_img_sp`
@@ -300,7 +331,7 @@ ALTER TABLE `library_img_sp`
 -- AUTO_INCREMENT cho bảng `loai_san_pham`
 --
 ALTER TABLE `loai_san_pham`
-  MODIFY `ma_loai_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ma_loai_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `options`
@@ -312,25 +343,25 @@ ALTER TABLE `options`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_order` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id_order_detail` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_order_detail` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `san_pham`
 --
 ALTER TABLE `san_pham`
-  MODIFY `ma_san_pham` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ma_san_pham` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

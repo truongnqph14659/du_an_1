@@ -56,7 +56,7 @@
                                     </th>
                                     <td class="b"><?= $_SESSION['list_cart'][$orders]['ten_sp'] ?></td>
                                     <td class="c price_item"><?= number_format($_SESSION['list_cart'][$orders]['don_gia']) ?></td>
-                                    <td class="c"><input type="number" min="1" data-discount="<?= $_SESSION['list_cart'][$orders]['giam_gia'] ?>" data-item="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>" data-price="<?php echo $_SESSION['list_cart'][$orders]['don_gia'] ?>" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
+                                    <td class="c"><input type="number" min="1" data-stores="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" data-discount="<?= $_SESSION['list_cart'][$orders]['giam_gia'] ?>" data-item="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>" data-price="<?php echo $_SESSION['list_cart'][$orders]['don_gia'] ?>" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
                                     <td class="c tong_tien_item">
                                         <?php
                                         $thanh_tien = number_format($_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity']);
@@ -198,19 +198,36 @@
                     var price = $(input_element).data('price')
                     var discount = $(input_element).data('discount')
                     var quantity = $(input_element).val();
-                    $.ajax({
-                        type: "POST",
-                        url: "re_quantity",
-                        data: {
-                            id_sp: id_sp,
-                            quantity: quantity,
-                            price: price,
-                            discount: discount
-                        },
-                        success: function(data) {
-                            $(".cart_list").html(data);
-                        }
-                    });
+                    var sl_luu_kho = $(input_element).data('stores')
+                    if (quantity !== "" && quantity <= sl_luu_kho) {
+                        $.ajax({
+                            type: "POST",
+                            url: "re_quantity",
+                            data: {
+                                id_sp: id_sp,
+                                quantity: quantity,
+                                price: price,
+                                discount: discount
+                            },
+                            success: function(data) {
+                                $(".cart_list").html(data);
+                            }
+                        });
+                    } else {
+                        $.ajax({
+                            type: "POST",
+                            url: "re_quantity",
+                            data: {
+                                id_sp: id_sp,
+                                quantity: 1,
+                                price: price,
+                                discount: discount
+                            },
+                            success: function(data) {
+                                $(".cart_list").html(data);
+                            }
+                        });
+                    }
                     tong_tien()
                 })
             })

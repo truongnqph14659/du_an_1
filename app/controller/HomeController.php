@@ -15,8 +15,8 @@ class HomeController
     // code ct sản phẩm
     static function product_detai()
     {
-        // require_once './app/controller/Fetch_Data/fetch_one_sp.php';
-        include './app/views/Home/detail_product/detail_page.php';
+        require_once './app/controller/Fetch_Data/fetch_one_sp.php';
+        // include './app/views/Home/detail_product/detail_page.php';
     }
     static function contact_page()
     {

@@ -10,6 +10,7 @@ $flag = false;
 if (isset($_SESSION['list_cart'])) {
     foreach ($_SESSION['list_cart'] as $orders => $values) {
         if ($_SESSION["list_cart"][$orders]["id_sp"] == $id_sp) {
+            $quantity += 1;
             $_SESSION["list_cart"][$orders] = [
                 'id_sp' => $ma_san_pham,
                 'ten_sp' => $ten_sp,

@@ -49,9 +49,8 @@
     <div class="container-fluid px-xl-5 pt-5">
         <div class="row1">
             <h2>
-                <?=
-                $data_sp['ten_sp']
-                ?>
+                Laptop Acer Gaming Aspire 7 (R5 5500U/8GB RAM/256GB SSD/15.6 inch
+                FHD/VGA GTX1650 /Win11 pro/Đen)
             </h2>
             <div class="product_detail">
                 <div class="product_detail_img">
@@ -61,9 +60,9 @@
                         <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/right.svg" class="right" alt="" />
                     </div>
                     <div class="img_side">
-                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_61154_laptop_lenovo_thinkpad_l13_gen_2_itl_20vh0049va_den_4.jpg" class="img_side_child" alt="" />
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_61154_laptop_lenovo_thinkpad_l13_gen_2_itl_20vh0049va_den_4.jpg" class="img_side_child" alt="" onclick="" />
 
-                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_63743_laptop_lenovo_thinkpad_e15_gen_3_7.png" class="img_side_child" alt="" />
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_63743_laptop_lenovo_thinkpad_e15_gen_3_7.png" class="img_side_child" alt="" onclick=""/>
                     </div>
                 </div>
                 <div class="product_detail_info">
@@ -81,12 +80,15 @@
                         <h1 class="price_old">20.190.000đ</h1>
                     </div>
                     <br />
-
+                    <div class="opsion">
+                        <button value="submit">256 SSD</button>
+                        <button value="submit">512 SSD</button>
+                        <button value="submit">8 GB</button>
+                        <button value="submit">16 GB</button>
+                    </div>
                     <label for=""> Số lượng:</label>
                     <div class="buttons_added">
-                        <input class="minus is-form" type="button" value="-" />
                         <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1" />
-                        <input class="plus is-form" type="button" value="+" />
                     </div>
                     <div class="add_cart">
                         <a class="add" href="#">
@@ -94,8 +96,7 @@
                             <label for="">Thêm vào giỏ hàng</label>
                         </a>
                     </div>
-                    <div class="btn_pay">Đặt mua ngay</div>
-
+                    <button class="btn_pay">Đặt mua ngay</button>
                 </div>
             </div>
             <div class="detail">

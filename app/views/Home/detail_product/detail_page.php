@@ -49,7 +49,9 @@
     <div class="container-fluid px-xl-5 pt-5">
         <div class="row1">
             <h2>
-
+                <?=
+                $data_sp['ten_sp']
+                ?>
             </h2>
             <div class="product_detail">
                 <div class="product_detail_img">
@@ -93,6 +95,7 @@
                         </a>
                     </div>
                     <div class="btn_pay">Đặt mua ngay</div>
+
                 </div>
             </div>
             <div class="detail">

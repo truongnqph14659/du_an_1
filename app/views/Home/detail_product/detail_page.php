@@ -52,6 +52,7 @@
                 Laptop Acer Gaming Aspire 7 (R5 5500U/8GB RAM/256GB SSD/15.6 inch
                 FHD/VGA GTX1650 /Win11 pro/Đen)
             </h2>
+            <h3>hello </h3>
             <div class="product_detail">
                 <div class="product_detail_img">
                     <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_57282_laptop_lenovo_thinkpad_e14_20ta002lva_den_8.png" class="img_main" alt="">

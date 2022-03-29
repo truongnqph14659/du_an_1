@@ -63,7 +63,7 @@
                     <div class="img_side">
                         <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_61154_laptop_lenovo_thinkpad_l13_gen_2_itl_20vh0049va_den_4.jpg" class="img_side_child" alt="" onclick="" />
 
-                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_63743_laptop_lenovo_thinkpad_e15_gen_3_7.png" class="img_side_child" alt="" onclick=""/>
+                        <img src="<?= server_port ?>/du_an_1/public/images_stores/img_fake/250_63743_laptop_lenovo_thinkpad_e15_gen_3_7.png" class="img_side_child" alt="" onclick="" />
                     </div>
                 </div>
                 <div class="product_detail_info">
@@ -75,6 +75,7 @@
                         VGA: NVIDIA GTX1650 4G <br />
                         Màn hình: 15.6 inch FHD<br />
                         HĐH: Win 11
+                    <p>nguyễn quang trường ph12453</p>
                     </p>
                     <div class="price">
                         <h1 class="price_new">18.990.000đ</h1>

@@ -11,7 +11,7 @@ class create_order extends BaseModel
     {
         $model = new static;
         $user = $id * 1;
-        $status_item = "đang xử lý";
+        $status_item = "s";
         $sql = "INSERT into $model->table (user_id,status_order) VALUES ($user,'$status_item')";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();

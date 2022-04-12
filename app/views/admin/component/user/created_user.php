@@ -22,59 +22,72 @@
         <div class="col-md-12">
           <!-- jquery validation -->
           <div class="card card-primary">
-
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form action="#" method="POST" enctype="multipart/form-data" id="quickForm" novalidate="novalidate">
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">user_name</label>
-                  <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            <form action="Insert_User" method="POST" enctype="multipart/form-data" id="quickForm" novalidate="novalidate">
+              <div class="d-flex">
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="ten_sp" class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" id="ten_sp" name="name" placeholder="nhập vào họ và tên">
+                  </div>
+                  <div class="mb-3">
+                    <label for="don_gia" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="don_gia" name="email" placeholder="nhập vào email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="sl_luu_kho" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="sl_luu_kho" name="password" placeholder="nhập vào password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="images_sp" class="form-label">Avatar</label>
+                    <div class="input-group mb-3">
+                      <input type="file" class="form-control" name="avatar" id="images_sp">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Số điện thoại</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" name="sdt" placeholder="nhập vào std">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">number phone</label>
-                  <input type="text" name="number_phone" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Avatar</label>
-                  <input type="file" name="image" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form__div">
-                  <fieldset>
-                    <legend>Vai Trò</legend>
-                    <label for="">khách hàng</label>
-                    <input type="radio" name="vai_tro" id="" value="0">
-                    <label for="">Nhân Viên</label>
-                    <input type="radio" name="vai_tro" id="" value="1">
-                  </fieldset>
-                </div>
-                <div class="form__div">
-                  <fieldset>
-                    <legend>trạng thái</legend>
-                    <label for="">Kích Hoạt</label>
-                    <input type="radio" name="status" id="on">
-                    <label for="">khóa</label>
-                    <input type="radio" name="status" id="off">
-                  </fieldset>
-                </div>
-                <div class="form-group mb-0">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                    <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="ngay_nhap" class="form-label">Địa_chỉ</label>
+                    <input type="text" class="form-control" id="ngay_nhap" name="dia_chi" placeholder="nhập vào địa chỉ">
+                  </div>
+                  <div class="mb-3">
+                    <label for="ngay_ket" class="form-label">xa_phuong</label>
+                    <input type="text" class="form-control" id="ngay_ket" name="xa_phuong" placeholder="nhập xã phường">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Quận huyện</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" name="quan_huyen" placeholder="nhập vào quận huyện">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Tỉnh Thành</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" name="tinh_thanh" placeholder="nhập vào tỉnh thành">
+                  </div>
+                  <div class="form__div mb-3">
+                    <fieldset>
+                      <legend>Vai Trò</legend>
+                      <label for="">khách hàng</label>
+                      <input type="radio" name="vai_tro" id="" value="0">
+                      <label for="">Nhân Viên</label>
+                      <input type="radio" name="vai_tro" id="" value="1">
+                    </fieldset>
+                  </div>
+                  <div class="form__div mb-3">
+                    <fieldset>
+                      <legend>trạng thái</legend>
+                      <label for="">Kích Hoạt</label>
+                      <input type="radio" name="status" id="on" value="1">
+                      <label for="">khóa</label>
+                      <input type="radio" name="status" id="off" value="0">
+                    </fieldset>
                   </div>
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
@@ -95,63 +108,7 @@
 <?php
 require_once './vender/src_script_admin.php';
 ?>
-<script>
-  $(function() {
-    $.validator.setDefaults({
 
-    });
-    $('#quickForm').validate({
-      rules: {
-        user_name: {
-          required: true
-        },
-        number_phone: {
-          required: true,
-          minlength: 5,
-        },
-        email: {
-          required: true,
-          email: true,
-        },
-        Password: {
-          required: true,
-          minlength: 5,
-        },
-        terms: {
-          required: true,
-        },
-      },
-      messages: {
-        user_name: {
-          required: "Please enter a name",
-        },
-        number_phone: {
-          required: "Please enter a number phone",
-        },
-        email: {
-          required: "Please enter a email address",
-          email: "Please enter a vaild email address"
-        },
-        password: {
-          required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long"
-        },
-        terms: "Please accept our terms"
-      },
-      errorElement: 'span',
-      errorPlacement: function(error, element) {
-        error.addClass('invalid-feedback');
-        element.closest('.form-group').append(error);
-      },
-      highlight: function(element, errorClass, validClass) {
-        $(element).addClass('is-invalid');
-      },
-      unhighlight: function(element, errorClass, validClass) {
-        $(element).removeClass('is-invalid');
-      }
-    });
-  });
-</script>
 <?php
 require_once './app/views/admin/footer.php';
 ?>

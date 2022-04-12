@@ -9,12 +9,19 @@ class AdminController extends BaseModel
     // 
     static function list_user()
     {
+        require_once './app/controller/Fetch_Data/fetch_users.php';
         include './app/views/admin/component/user/list_user.php';
     }
-    // 
+    // created_acc
     static function created_acc()
     {
-        include './app/views/admin/component/user/created_user.php';
+        require_once './app/views/admin/component/user/created_user.php';
+    }
+
+    // Insert_User
+    static function Insert_User()
+    {
+        require_once './app/controller/Insert_Data/InsertUser.php';
     }
     // 
     static function edit_account()

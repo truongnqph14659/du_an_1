@@ -46,8 +46,12 @@ switch ($url) {
         break;
     case 'Created_account':
         AdminController::created_acc();
-        // 
         break;
+        // Insert_User
+    case 'Insert_User':
+        AdminController::Insert_User();
+        break;
+        // 
     case 'edit_acount':
         AdminController::edit_account();
         break;

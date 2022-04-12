@@ -187,11 +187,18 @@ class AdminController extends BaseModel
     // 
     static function orders()
     {
+        require_once './app/controller/Fetch_Data/fetch_order.php';
+        include './app/views/admin/component/Order/Order.php';
+    }
+    static function update_status()
+    {
+        require_once './app/controller/Update_Data/update_status.php';
         include './app/views/admin/component/Order/Order.php';
     }
     // 
     static function order_details()
     {
+        require_once './app/controller/Fetch_Data/fetch_one_order_details.php';
         include './app/views/admin/component/Order/Order_detail.php';
     }
     // 

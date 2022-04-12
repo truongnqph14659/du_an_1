@@ -23,33 +23,43 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>id_sp</th>
               <th>Name</th>
               <th>Price</th>
-              <th>Views</th>
-              <th>Img</th>
-              <th>Categories</th>
-              <th>Content</th>
-              <th>Action</th>
+              <th>Discount</th>
+              <th>image</th>
+              <th>sl luu kho</th>
+              <th>tg_bat_dau</th>
+              <th>tg_ket_thuc</th>
+              <th>option</th>
+              <th>chi tiet sp</th>
+              <th>images</th>
+              <th>action</th>
             </tr>
           </thead>
           <tbody>
-            <!-- fake data -->
-            <?php
-            $result = [];
-            ?>
-            <?php foreach ($result as $value) : ?>
+            <?php foreach ($data_sp as $value) : ?>
               <tr>
-                <td><?= $value['id'] ?></td>
-                <td><?= $value['products_name'] ?></td>
-                <td><?= $value['price'] ?></td>
-                <td><?= $value['view'] ?></td>
-                <td><img src="public/img/<?= $value['image'] ?>" width="100px"></td>
-                <td><?= $value['categories_id'] ?></td>
-                <td><?= $value['content'] ?></td>
+                <td><?= $value['ma_san_pham'] ?></td>
+                <td><?= $value['ten_sp'] ?></td>
+                <td><?= $value['don_gia'] ?></td>
+                <td><?= $value['giam_gia'] ?></td>
+                <td><img src="<?= $value['images_sp'] ?>" width="100px"></td>
+                <td><?= $value['sl_luu_kho'] ?></td>
+                <td><?= $value['thoi_gian_bat_dau'] ?></td>
+                <td><?= $value['thoi_gian_ket_thuc'] ?></td>
                 <td>
-                  <a href="edit_product?id=<?= $value['id'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
-                  <a href="remove_product?id=<?= $value['id'] ?>"><i class="fas fa-trash-alt btn btn-danger"></i></a>
+                  <a href="list_option_sp?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
+                </td>
+                <td>
+                  <a href="list_detail_sp?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
+                </td>
+                <td>
+                  <a href="list_images_sp?id=<?= $value['ma_san_pham'] ?>"><i class="fa-solid fa-images btn btn-primary"></i></a>
+                </td>
+                <td>
+                  <a href="edit_product?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
+                  <a href="remove_product?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-trash-alt btn btn-danger"></i></a>
                 </td>
               </tr>
             <?php endforeach ?>

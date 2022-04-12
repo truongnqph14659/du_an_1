@@ -3,8 +3,17 @@ require_once './app/models/BaseModel.php';
 extract($_POST);
 class fetch_data_cart extends BaseModel
 {
+    // function lấy dữ liệu nếu chọn sp có option
+    static function get_options_change($id, $id_option)
+    {
+        $model = new  static;
+        $sql = "SELECT chi_tiet_sp.CPU,chi_tiet_sp.ma_ct_sp,chi_tiet_sp.chung_loai,chi_tiet_sp.part_number,chi_tiet_sp.mau_sac,chi_tiet_sp.man_hinh,san_pham.ma_san_pham,san_pham.ten_sp,san_pham.images_sp,san_pham.ma_loai_sp,options.ma_option,options.RAM,options.ROM,options.VGA,sp_option.don_gia,sp_option.giam_gia,sp_option.sl_luu_kho,sp_option.thoi_gian_bat_dau,sp_option.thoi_gian_ket_thuc FROM chi_tiet_sp JOIN san_pham ON chi_tiet_sp.ma_san_pham = san_pham.ma_san_pham JOIN sp_option ON san_pham.ma_san_pham =sp_option.ma_san_pham JOIN options ON options.ma_option = sp_option.ma_option WHERE sp_option.ma_san_pham = $id AND sp_option.ma_option = $id_option";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
-$data_sp = fetch_data_cart::Get_Data_Private_Sp($id_sp);
+$data_sp = isset($_POST['option']) == true ? fetch_data_cart::get_options_change($id_sp, $option) : fetch_data_cart::Get_Data_Private_Sp($id_sp);
 extract($data_sp);
 $flag = false;
 if (isset($_SESSION['list_cart'])) {
@@ -17,14 +26,13 @@ if (isset($_SESSION['list_cart'])) {
                 'don_gia' => $don_gia,
                 'giam_gia' => $giam_gia,
                 'images_sp' => $images_sp,
-                'dac_biet' => $dac_biet,
-                'ngay_nhap' => $ngay_nhap,
                 'sl_luu_kho' => $sl_luu_kho,
                 'ma_loai' => $ma_loai_sp,
                 'id_user' => $user_id,
                 'quantity' => $quantity,
                 'tam_tinh' => ($quantity * $don_gia) - $giam_gia,
-                'thoi_gian_giam_gia' => $thoi_gian_giam_gia,
+                'thoi_gian_bat_dau' => $thoi_gian_bat_dau,
+                'thoi_gian_ket_thuc' => $thoi_gian_ket_thuc,
                 'ma_option' => $ma_option,
                 'ma_ct_sp' => $ma_ct_sp,
                 'chung_loai' => $chung_loai,
@@ -49,14 +57,13 @@ if (!$flag) {
             'don_gia' => $don_gia,
             'giam_gia' => $giam_gia,
             'images_sp' => $images_sp,
-            'dac_biet' => $dac_biet,
-            'ngay_nhap' => $ngay_nhap,
             'sl_luu_kho' => $sl_luu_kho,
             'ma_loai' => $ma_loai_sp,
             'id_user' => $user_id,
             'quantity' => $quantity,
             'tam_tinh' => ($quantity * $don_gia) - $giam_gia,
-            'thoi_gian_giam_gia' => $thoi_gian_giam_gia,
+            'thoi_gian_bat_dau' => $thoi_gian_bat_dau,
+            'thoi_gian_ket_thuc' => $thoi_gian_ket_thuc,
             'ma_option' => $ma_option,
             'ma_ct_sp' => $ma_ct_sp,
             'chung_loai' => $chung_loai,

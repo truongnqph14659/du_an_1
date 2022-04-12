@@ -47,4 +47,14 @@ class HomeController
     {
         require_once './app/controller/Insert_Data/InsertOrder.php';
     }
+    // insert comment
+    static function Insert_Comment()
+    {
+        require_once './app/controller/Insert_Data/InsertComment.php';
+    }
+    // treeview comment
+    static function treeview_comment()
+    {
+        require_once './app/controller/Fetch_Data/fetch_comments.php';
+    }
 }

@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- Libraries Stylesheet -->
     <link href="<?= server_port ?>du_an_1/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= server_port ?>du_an_1/public/css/style.css" rel="stylesheet">
 </head>
@@ -36,46 +37,11 @@
     <div class="container-fluid mb-2">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <div class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                <div class="d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">Danh mục</h6>
-                    <i class="fa fa-angle-down text-dark"></i>
                 </div>
-                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: auto">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Asus <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Asus x551</a>
-                                <a href="" class="dropdown-item">Asus L929</a>
-                                <a href="" class="dropdown-item">Asus k234</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Dell <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Dell x551</a>
-                                <a href="" class="dropdown-item">Dell L929</a>
-                                <a href="" class="dropdown-item">Dell k234</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">HP <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">HP x551</a>
-                                <a href="" class="dropdown-item">HP L929</a>
-                                <a href="" class="dropdown-item">HP k234</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Phụ kiện <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">RAM x551</a>
-                                <a href="" class="dropdown-item">VGA L929</a>
-                                <a href="" class="dropdown-item">Chuột k234</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+                <div id="tree">
+                </div>
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
@@ -102,7 +68,7 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <?php foreach ($data_sp as $values) : ?>
-                            <?php if ($values['images_banner_sp'] !== null) : ?>
+                            <?php if ($values['images_banner_sp'] !== null && $values['images_banner_sp'] !== '') : ?>
                                 <div class="swiper-slide">
                                     <img src="<?= $values['images_banner_sp'] ?>" alt="">
                                 </div>
@@ -216,12 +182,11 @@
                                     ?>
                                 </li>
                                 <li>
-                                    <span>
-                                        <?php
-                                        $string_ram = (strlen($values["RAM"]) > 4) ? substr($values["RAM"], 0, 6) . '...' : $values["RAM"];
-                                        $string_rom = (strlen($values["ROM"]) > 4) ? substr($values["ROM"], 0, 11) . '...' : $values["ROM"];
-                                        echo $string_ram . ' / ' . $string_rom;
-                                        ?>
+                                    <?php
+                                    $string_ram = (strlen($values["RAM"]) > 4) ? substr($values["RAM"], 0, 6) . '...' : $values["RAM"];
+                                    $string_rom = (strlen($values["ROM"]) > 4) ? substr($values["ROM"], 0, 11) . '...' : $values["ROM"];
+                                    echo $string_ram . ' / ' . $string_rom;
+                                    ?>
                                 </li>
                                 <li>
                                     <?php
@@ -498,6 +463,31 @@
         unset($_SESSION["check_success"]);
         ?>
     <?php endif ?>
+
+
 </body>
 
 </html>
+<!-- code cho phần treeview -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="<?= server_port ?>du_an_1/public/js/bstreeview.js"></script>
+
+<script>
+    $(function() {
+        $.ajax({
+            url: 'fetch_loai_treeview',
+            dataType: "json",
+            success: function(data) {
+                $('#tree').bstreeview({
+                    data: data,
+                    expandIcon: 'fa fa-angle-down fa-fw',
+                    collapseIcon: 'fa fa-angle-right fa-fw',
+                    indent: 2.05,
+                    parentsMarginLeft: '1.25rem',
+                    openNodeLinkOnNewTab: false
+                });
+            }
+        })
+    });
+</script>

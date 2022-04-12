@@ -14,12 +14,7 @@ class BaseModel
         $sql = "INSERT into $model->table ($db_data) VALUES ($form_data)";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
-        if ($model->table == 'user') {
-            $msg = "Sign_in Successfully, take 1 min to active!";
-        } else {
-            $msg = "Insert Successfully!";
-        }
-        header("location:$header?msg='$msg'");
+        header("location:$header");
     }
     // function get data from table
     static function Get_Data()
@@ -39,5 +34,42 @@ class BaseModel
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    // function get data from table join to another table with condiotion
+    static function Get_Data_Edit($id, $rule)
+    {
+        $model = new static;
+        $sql = "SELECT * FROM $model->table WHERE $rule=$id";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    // update data
+    static function Update_Data($re_values, $id, $rule, $header = "#")
+    {
+        $model = new static;
+        $sql = "UPDATE $model->table SET $re_values WHERE $id=$rule";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        header("Location:$header");
+    }
+    // function get data with condition
+    static function Get_One_Condition($rule, $operator, $id)
+    {
+        $model = new static;
+        $sql = "SELECT * FROM $model->table WHERE $id $operator '$rule'";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    // function delete
+    static function Delete($data_delete, $id, $header)
+    {
+        $model = new static;
+        $sql = "DELETE FROM $model->table WHERE $id=$data_delete";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        $msg = 'Deleted Successfully!';
+        header("Location:$header&?msg=$msg");
     }
 }

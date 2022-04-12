@@ -2,6 +2,10 @@
 require_once './app/models/BaseModel.php';
 // có thể so sánh id_user từ url va session để đối chiếu
 $id_user = $_GET['id_user'];
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 class create_order extends BaseModel
 {
     var $table = "orders";
@@ -11,12 +15,81 @@ class create_order extends BaseModel
     {
         $model = new static;
         $user = $id * 1;
-        $status_item = "s";
+        $status_item = "x";
         $sql = "INSERT into $model->table (user_id,status_order) VALUES ($user,'$status_item')";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         $id_order =  $model->conn->lastInsertId();
         $item_stores = $_SESSION['list_cart'];
+        $tong = 0;
+        // $a = "
+        // <table>
+        //     <tr>
+        //         <th>ok</th>
+        //         <th>ok</th>
+        //         <th>ok</th>
+        //         <th>ok</th>
+        //         <th>ok</th>
+        //         <th>ok</th>
+        //     </tr>
+        // ";
+        // $c = "
+        // </table>
+        // ";
+        // $b= '';
+        // $tong = 0;
+        //         foreach ($item_stores as $key => $value) {
+        //             echo"<pre>";
+        //             // var_dump($value['tam_tinh']);
+        //             $tong += $value['tam_tinh'];
+        //             $b .="
+        //             <tr>
+        //                 <td>huynugyen</td>
+        //                 <td>huynugyen</td>
+        //                 <td>huynugyen</td>
+        //                 <td>huynugyen</td>
+        //                 <td>huynugyen</td>
+        //                 <td>huynugyen</td>
+        //             </tr>
+        //             ";
+        //         }
+        //         $h = "
+        //          <h3>".$tong."</h3>
+        //         ";
+        //         $d = $a.$b.$c.$h;
+        //         echo $d;
+        //         $email = 'nguyenphuonganhhd1999@gmail.com';
+        //         include 'public/Email/library.php'; // include the library file
+        //         require_once 'public/Email/vendor/autoload.php';
+        //         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+        //         try {
+        //             //Server settings
+        //             $mail->CharSet = "UTF-8";
+        //             $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+        //             $mail->isSMTP();                                      // Set mailer to use SMTP
+        //             $mail->Host = SMTP_HOST;  // Specify main and backup SMTP servers
+        //             $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        //             $mail->Username = SMTP_UNAME;                 // SMTP username
+        //             $mail->Password = SMTP_PWORD;                           // SMTP password
+        //             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+        //             $mail->Port = SMTP_PORT;                                    // TCP port to connect to
+        //             //Recipients
+        //             $mail->setFrom(SMTP_UNAME, "Coffee House");
+        //             $mail->addAddress($email, 'Tên người nhận');     // Add a recipient | name is option
+        //             $mail->addReplyTo(SMTP_UNAME, 'Tên người trả lời');
+        // //                    $mail->addCC('CCemail@gmail.com');
+        // //                    $mail->addBCC('BCCemail@gmail.com');
+        //             $mail->isHTML(true);                                  // Set email format to HTML
+        //             $mail->Subject = 'ok';
+
+        //             $mail->Body = $d;
+        //             $mail->AltBody = 'cảm ỏn'; //None HTML
+        //             $result = $mail->send();
+        //             echo 'gửi thành công';
+        //         } catch (Exception $e) {
+        //             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        //         }
+        //         die;
         foreach ($item_stores as $orders => $values) {
             extract($item_stores[$orders]);
             $option_order = $ma_option == "none" ? 0 : $ma_option * 1;
@@ -28,6 +101,39 @@ class create_order extends BaseModel
             // unset($item_stores[$orders]);
             // header("location:index.php");
         }
+        // echo $
+        //         $email = 'nguyenphuonganhhd1999@gmail.com';
+        //         include 'public/Email/library.php'; // include the library file
+        //         require_once 'public/Email/vendor/autoload.php';
+        //         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+        //         try {
+        //             //Server settings
+        //             $mail->CharSet = "UTF-8";
+        //             $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+        //             $mail->isSMTP();                                      // Set mailer to use SMTP
+        //             $mail->Host = SMTP_HOST;  // Specify main and backup SMTP servers
+        //             $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        //             $mail->Username = SMTP_UNAME;                 // SMTP username
+        //             $mail->Password = SMTP_PWORD;                           // SMTP password
+        //             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+        //             $mail->Port = SMTP_PORT;                                    // TCP port to connect to
+        //             //Recipients
+        //             $mail->setFrom(SMTP_UNAME, "Coffee House");
+        //             $mail->addAddress($email, 'Tên người nhận');     // Add a recipient | name is option
+        //             $mail->addReplyTo(SMTP_UNAME, 'Tên người trả lời');
+        // //                    $mail->addCC('CCemail@gmail.com');
+        // //                    $mail->addBCC('BCCemail@gmail.com');
+        //             $mail->isHTML(true);                                  // Set email format to HTML
+        //             $mail->Subject = 'ok';
+
+        //             $mail->Body = '11111';
+        //             $mail->AltBody = 'cảm ỏn'; //None HTML
+        //             $result = $mail->send();
+        //             echo 'gửi thành công';
+        //         } catch (Exception $e) {
+        //             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        //         }
+        // đơn giá sô lượng tên sản phẩm
         unset($_SESSION['list_cart']);
         $_SESSION['check_success'] = [
             'success' => "success"

@@ -29,50 +29,28 @@
             </div>
           </div>
           <!--  fake data  -->
-          <?php
-          $result = [2];
-          ?>
-          <?php foreach ($result as $key => $value) : ?>
+      
+          <?php foreach ($data_top_views as $key => $value) : ?>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Name produts</label>
+                <label for="inputName">Tên sản phẩm</label>
                 <!-- <input type="text" id="inputName" class="form-control" value="AdminLTE"> -->
-                <p>asus 123</p>
+                <p><?php echo $value['ten_sp'] ?></p>
               </div>
               <div class="form-group">
                 <label for="inputDescription">Price</label>
-                <p>100000vnd</p>
+                <p><?php echo $value['don_gia'] ?></p>
               </div>
               <div class="form-group">
-                <label for="inputDescription">image</label>
+                <label for="inputDescription">image</label> 
                 <p><img src="" class="user_image" style="width:50px"></p>
               </div>
               <div class="form-group">
-                <label for="inputStatus">Quantity</label>
-                <p>2</p>
+                <label for="inputStatus">quantity</label>
+                <p><?php echo $value['so_luong'] ?></p>
               </div>
             </div>
-            <hr>
-            <div class="card-body">
-              <div class="form-group">
-                <label for="inputName">Name produts</label>
-                <!-- <input type="text" id="inputName" class="form-control" value="AdminLTE"> -->
-                <p>asus 123</p>
-              </div>
-              <div class="form-group">
-                <label for="inputDescription">Price</label>
-                <p>100000vnd</p>
-              </div>
-              <div class="form-group">
-                <label for="inputDescription">image</label>
-                <p><img src="" class="user_image" style="width:50px"></p>
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Quantity</label>
-                <p>2</p>
-              </div>
-            </div>
-            <!-- <?php endforeach; ?> -->
+          <?php endforeach; ?>
             <!-- /.card-body -->
         </div>
 
@@ -92,7 +70,7 @@
           <div class="card-body">
             <div class="form-group">
               <label for="inputEstimatedBudget">Name</label>
-              <p>tên người nhận :<strong>nguyen quang truong</strong></p>
+              <p>tên người nhận :<strong><?php echo $data_top_views[0]['user_name'] ?></strong></p>
             </div>
             <div class="form-group">
               <label for="inputSpentBudget">Phone Number</label>

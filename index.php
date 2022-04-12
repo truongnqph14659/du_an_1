@@ -194,6 +194,9 @@ switch ($url) {
         unset($_SESSION['list_cart']);
         header('location: index.php');
         break;
+    case 'update_status':
+        AdminController::update_status();
+        break;
     default:
         echo "duong dan khong ton tai";
         break;

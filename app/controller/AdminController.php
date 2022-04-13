@@ -110,6 +110,22 @@ class AdminController extends BaseModel
         require_once './app/controller/Fetch_Data/fetch_option.php';
         include './app/views/admin/component/products/add_option_sp.php';
     }
+    // create_option
+    static function create_option()
+    {
+        include './app/views/admin/component/products/create_option.php';
+    }
+    // Option_Creating
+    static function Option_Creating()
+    {
+        include './app/controller/Insert_Data/InsertCreatedOption.php';
+    }
+    // list_option
+    static function list_option()
+    {
+        require_once './app/controller/Fetch_Data/fetch_option.php';
+        include './app/views/admin/component/products/show_option.php';
+    }
     // insert_option_sp
     static function insert_option_sp()
     {

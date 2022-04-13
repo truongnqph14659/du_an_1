@@ -74,6 +74,10 @@ switch ($url) {
     case 'list_product':
         AdminController::list_product();
         break;
+        // list_option
+    case 'list_option':
+        AdminController::list_option();
+        break;
         // list_option_sp
     case 'list_option_sp':
         AdminController::list_option_sp();
@@ -170,6 +174,14 @@ switch ($url) {
         // form_option_sp
     case 'form_option_sp':
         AdminController::form_option_sp();
+        break;
+        // create_option
+    case 'form_option':
+        AdminController::create_option();
+        break;
+        // Option_Creating
+    case 'Option_Creating':
+        AdminController::Option_Creating();
         break;
         // form_multi_images
     case 'form_multi_images':

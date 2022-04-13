@@ -196,7 +196,12 @@
                     <p>Add Product</p>
                   </a>
                 </li>
-
+                <li class="nav-item">
+                  <a href="form_option" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Option</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -269,23 +274,6 @@
                 <i class="fa-solid fa-tags"></i>
                 <p>
                   Discount
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Chart</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fas fa-inbox"></i>
-                <p>
-                  Quản lý kho
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>

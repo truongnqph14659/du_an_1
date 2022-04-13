@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Danh Sách Tài Khoản</h1>
+          <h1 class="m-0">Chi tiết đơn hàng</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -29,7 +29,7 @@
             </div>
           </div>
           <!--  fake data  -->
-      
+
           <?php foreach ($data_top_views as $key => $value) : ?>
             <div class="card-body">
               <div class="form-group">
@@ -42,7 +42,7 @@
                 <p><?php echo $value['don_gia'] ?></p>
               </div>
               <div class="form-group">
-                <label for="inputDescription">image</label> 
+                <label for="inputDescription">image</label>
                 <p><img src="" class="user_image" style="width:50px"></p>
               </div>
               <div class="form-group">
@@ -51,7 +51,7 @@
               </div>
             </div>
           <?php endforeach; ?>
-            <!-- /.card-body -->
+          <!-- /.card-body -->
         </div>
 
         <!-- /.card -->

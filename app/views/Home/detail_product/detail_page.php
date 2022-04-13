@@ -168,7 +168,7 @@
                             <?php
                             $id_user = 1;
                             ?>
-                            <input class="btn btn-primary <?= $data_sp["sl_luu_kho"] > 0 ? 'submit' : '' ?>" id="success" role="button" name="submit" type="submit" data-id="<?= $id_sp ?>" data-option="<?= isset($_GET['ma_option']) == true ? $_GET['ma_option'] : "none" ?>" data-user="<?= $id_user ?>" value="Thêm vào giỏ hàng">
+                            <input class="btn btn-primary <?= $data_sp["sl_luu_kho"] > 0 ? 'submit' : '' ?>" id="success" role="button" name="submit" type="submit" data-id="<?= $id_sp ?>" data-option="<?= isset($_GET['ma_option']) == true ? $_GET['ma_option'] : 0 ?>" data-user="<?= $id_user ?>" value="Thêm vào giỏ hàng">
                         </div>
                     </div>
                 </div>
@@ -378,7 +378,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-    <script src="<?= server_port ?>du_an_1/public/js/ajax_cart_list.js"></script>
     <!-- Initialize Swiper -->
     <!-- js add to cart -->
     <script>

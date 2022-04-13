@@ -13,7 +13,16 @@ class fetch_data_cart extends BaseModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
-$data_sp = isset($_POST['option']) == true ? fetch_data_cart::get_options_change($id_sp, $option) : fetch_data_cart::Get_Data_Private_Sp($id_sp);
+$data_sp;
+if (isset($option)) {
+    if ($option == 0) {
+        $data_sp = fetch_data_cart::Get_Data_Private_Sp($id_sp);
+    } else {
+        $data_sp = fetch_data_cart::get_options_change($id_sp, $option);
+    }
+} else {
+    $data_sp = fetch_data_cart::Get_Data_Private_Sp($id_sp);
+}
 extract($data_sp);
 $flag = false;
 if (isset($_SESSION['list_cart'])) {
@@ -77,7 +86,6 @@ if (!$flag) {
         ];
     }
 }
-
 echo '
 <div class="btn border">
     <i class="fas fa-shopping-cart text-white "></i>

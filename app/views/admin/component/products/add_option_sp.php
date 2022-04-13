@@ -80,6 +80,9 @@ require_once './vender/src_script_admin.php';
         option.addEventListener('click', () => {
             const div_opton = option.parentElement.querySelector('.form_input_data')
             div_opton.classList.toggle('d-flex')
+            div_opton.querySelectorAll('.form-control').forEach(selector_input => {
+                selector_input.value = "";
+            });
         })
     })
 </script>

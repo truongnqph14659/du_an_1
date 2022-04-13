@@ -6,9 +6,9 @@
             </a>
         </div>
         <div class="col-lg-6 col-6 text-left">
-            <form action="">
+            <form action="product_page" method="GET" enctype="multipart/form-data">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="tìm kiếm sản phẩm">
+                    <input type="text" class="form-control" name="key" placeholder="tìm kiếm sản phẩm">
                     <div class="input-group-append search">
                         <button type="submit" class="input-group-text bg-transparent .text-dark">
                             <i class="fa fa-search "></i>

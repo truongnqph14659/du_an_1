@@ -11,6 +11,7 @@ class create_order extends BaseModel
     var $table = "orders";
     var $table_order_detail = "order_details";
     var $san_pham = "san_pham";
+    var $user = "user";
     static function create_order($id)
     {
         $model = new static;
@@ -20,17 +21,19 @@ class create_order extends BaseModel
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         $id_order =  $model->conn->lastInsertId();
-        $item_stores = $_SESSION['list_cart'];
+        $item_stores = $_SESSION['list_cart'];;
+        $sql = "SELECT * FROM $model->user WHERE user_id=$id";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        $user_info = $stmt->fetch(PDO::FETCH_ASSOC);
         $tong = 0;
         $a = "
         <table>
             <tr>
-                <th>ok</th>
-                <th>ok</th>
-                <th>ok</th>
-                <th>ok</th>
-                <th>ok</th>
-                <th>ok</th>
+                <th>Tên sản phẩm</th>
+                <th>số lượng</th>
+                <th>đơn giá</th>
+                <th>thành tiền</th>
             </tr>
         ";
         $c = "
@@ -39,22 +42,19 @@ class create_order extends BaseModel
         $b = '';
         $tong = 0;
         foreach ($item_stores as $key => $value) {
-            echo "<pre>";
-            // var_dump($value['tam_tinh']);
             $tong += $value['tam_tinh'];
             $b .= "
                     <tr>
                         <td>" . $value['ten_sp'] . "</td>
-                        <td>huynugyen</td>
-                        <td>huynugyen</td>
-                        <td>huynugyen</td>
-                        <td>huynugyen</td>
-                        <td>huynugyen</td>
+                        <td>" . $value['quantity'] . "</td>
+                        <td>" . number_format($value['don_gia']) . "đ</td>
+                        <td>" . number_format($value['tam_tinh']) . "đ</td>
                     </tr>
                     ";
         }
-        $h = "
-                 <h3>" . $tong . "</h3>
+        $h = "   <p>giao hàng tới:" . $user_info['user_name'] . " </p>
+                 <p?>địa chỉ: " . $user_info['dia_chi'] . ',' . $user_info['xa_phuong'] . ',' . $user_info['quan_huyen'] . ',' . $user_info['tinh_thanh'] . ',' . "</p>
+                 <h3>Tổng thanh toán:" . number_format($tong) . "đ</h3>
                 ";
         $d = $a . $b . $c . $h;
         echo $d;
@@ -80,7 +80,7 @@ class create_order extends BaseModel
             //                    $mail->addCC('CCemail@gmail.com');
             //                    $mail->addBCC('BCCemail@gmail.com');
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'ok';
+            $mail->Subject = "Xác nhận đơn hàng #$id_order";
 
             $mail->Body = $d;
             $mail->AltBody = 'cảm ỏn'; //None HTML
@@ -89,7 +89,6 @@ class create_order extends BaseModel
         } catch (Exception $e) {
             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
-        //         die;
         foreach ($item_stores as $orders => $values) {
             extract($item_stores[$orders]);
             $option_order = $ma_option == "none" ? 0 : $ma_option * 1;

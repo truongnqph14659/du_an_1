@@ -11,6 +11,15 @@ class fetch_sp extends BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    static function Get_Data_Sp_Keyword($key)
+    {
+        $model = new static;
+        $sql = "SELECT * FROM san_pham JOIN chi_tiet_sp ON san_pham.ma_san_pham = chi_tiet_sp.ma_san_pham WHERE ten_sp LIKE '%$key%'";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // function load 6 sp nổi bật
     static function top_products()
     {
@@ -21,5 +30,5 @@ class fetch_sp extends BaseModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
-$data_sp = fetch_sp::Get_Data_Sp();
+$data_sp = isset($_GET['key']) == false ? fetch_sp::Get_Data_Sp() : fetch_sp::Get_Data_Sp_Keyword($_GET['key']);
 $data_top_views = fetch_sp::top_products();

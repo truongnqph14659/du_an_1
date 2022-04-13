@@ -100,7 +100,7 @@
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (6).jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
@@ -108,7 +108,7 @@
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
@@ -116,7 +116,7 @@
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
@@ -124,7 +124,7 @@
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (3).jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
@@ -132,7 +132,7 @@
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (6).jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Bags</h5>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
@@ -140,7 +140,7 @@
                     <a href="" class="cat-img align-self-center position-relative overflow-hidden mb-3">
                         <img height="100px" width="200px" src="<?= server_port ?>du_an_1/public/images_stores/img/images (6).jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Shoes</h5>
+
                 </div>
             </div>
         </div>

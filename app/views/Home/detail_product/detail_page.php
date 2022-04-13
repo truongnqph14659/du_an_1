@@ -51,60 +51,22 @@
                 <div class="col-7">
                     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
+                            <?php foreach ($lib_images_sp as $values) : ?>
+                                <div class="swiper-slide">
+                                    <img src="<?= $values['images'] ?>" />
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
                     <div thumbsSlider="" class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                            </div>
+                            <?php foreach ($lib_images_sp as $values) : ?>
+                                <div class="swiper-slide">
+                                    <img src="<?= $values['images'] ?>" />
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -177,10 +139,7 @@
                 <div class="col-8">
                     <h4>thông tin sản phẩm</h4>
                     <p>
-                        Laptop là một thiết bị không thể thiếu đối với mỗi cá nhân trong công việc, học tập và giải trí hàng ngày. Bài viết này sẽ thông tin đến bạn 9 mẫu laptop tốt nhất hiện nay trên thị trường, giúp bạn có cái nhìn tổng quan và thêm thông tin để có thể lựa chọn cho mình một mẫu laptop ưng ý.
-                        MacBook là sản phẩm laptop đến từ Apple. Máy có thiết kế nhỏ gọn, mỏng và trọng lượng không lớn cùng thiết kế sang trọng với cấu hình hiện đại mang đến hiệu năng mượt mà. Ngoài ra, hệ thống bảo mật của MacBook rất cao khiến người dùng khá tin tưởng.
-                        MacBook là sản phẩm laptop đến từ Apple. Máy có thiết kế nhỏ gọn, mỏng và trọng lượng không lớn cùng thiết kế sang trọng với cấu hình hiện đại mang đến hiệu năng mượt mà. Ngoài ra, hệ thống bảo mật của MacBook rất cao khiến người dùng khá tin tưởng.
-                        MacBook là sản phẩm laptop đến từ Apple. Máy có thiết kế nhỏ gọn, mỏng và trọng lượng không lớn cùng thiết kế sang trọng với cấu hình hiện đại mang đến hiệu năng mượt mà. Ngoài ra, hệ thống bảo mật của MacBook rất cao khiến người dùng khá tin tưởng.
+                        <?= $data_sp["mo_ta_ct"] ?>
                     </p>
                     <!-- phần dành cho bình luận -->
 

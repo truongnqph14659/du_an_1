@@ -60,7 +60,7 @@ class BaseModel
         $sql = "SELECT * FROM $model->table WHERE $id $operator '$rule'";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     // function delete
     static function Delete($data_delete, $id, $header)

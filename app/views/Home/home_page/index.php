@@ -19,6 +19,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- Libraries Stylesheet -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="<?= server_port ?>du_an_1/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -207,11 +208,12 @@
                             <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
                             <button class="btn btn-sm text-dark p-0 ">
                                 <?php
-                                $id_user = 1;
-                                $quantity = 1;
-                                // if (isset($_SESSION['user_account']['user_id'])) {
-                                //     $id_user = $_SESSION['user_account']['user_id'];
-                                // }
+                                $id_user = 0;
+                                $quantity = 0;
+                                if (isset($_SESSION['user_account'])) {
+                                    $id_user = $_SESSION['user_account']['user_id'];
+                                    $quantity = 1;
+                                }
                                 ?>
                                 <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
                             </button>
@@ -284,11 +286,12 @@
                             <span class="fs-6 text text-success"><i class="fa-solid fa-check"></i>còn hàng</span>
                             <button class="btn btn-sm text-dark p-0 ">
                                 <?php
-                                $quantity = 1;
-                                $id_user = 1;
-                                // if (isset($_SESSION['user_account']['user_id'])) {
-                                //     $id_user = $_SESSION['user_account']['user_id'];
-                                // }
+                                $id_user = 0;
+                                $quantity = 0;
+                                if (isset($_SESSION['user_account'])) {
+                                    $id_user = $_SESSION['user_account']['user_id'];
+                                    $quantity = 1;
+                                }
                                 ?>
                                 <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values["ma_san_pham"] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
                             </button>

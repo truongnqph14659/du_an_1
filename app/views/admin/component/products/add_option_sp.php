@@ -78,11 +78,11 @@ require_once './vender/src_script_admin.php';
     var check_box = document.querySelectorAll('.form-check-input')
     check_box.forEach((option) => {
         option.addEventListener('click', () => {
-            const div_opton = option.parentElement.querySelector('.form_input_data')
-            div_opton.classList.toggle('d-flex')
+            var div_opton = option.parentElement.querySelector('.form_input_data')
             div_opton.querySelectorAll('.form-control').forEach(selector_input => {
                 selector_input.value = "";
             });
+            div_opton.classList.toggle('d-flex')
         })
     })
 </script>

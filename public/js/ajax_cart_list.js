@@ -3,6 +3,12 @@ $('.submit').each((index, add_cart) => {
     const id_sp = $(add_cart).data('id')
     const user_id = $(add_cart).data('user')
     const quantity = $(add_cart).data('qty')
+    if(user_id==0){
+      swal("Cần phải có tài khoản để mua hàng!");
+      $("html, body").animate({
+        scrollTop: 0
+    }, "slow");
+    }else{
     $.ajax({
         type: "POST",
         url: "cart_lists",
@@ -18,5 +24,6 @@ $('.submit').each((index, add_cart) => {
             $(".cart_list").html(data);
         }
     });
+  }
   })
 })

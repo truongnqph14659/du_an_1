@@ -45,7 +45,7 @@ class create_order extends BaseModel
             $tong += $value['tam_tinh'];
             $b .= "
                     <tr>
-                        <td>" . $value['ten_sp'] . "</td>
+                        <td>" . $value['ten_sp'] . ' ' . $value['RAM'] . ' / ' . $value['ROM'] . "</td>
                         <td>" . $value['quantity'] . "</td>
                         <td>" . number_format($value['don_gia']) . "đ</td>
                         <td>" . number_format($value['tam_tinh']) . "đ</td>
@@ -91,8 +91,8 @@ class create_order extends BaseModel
         }
         foreach ($item_stores as $orders => $values) {
             extract($item_stores[$orders]);
-            $option_order = $ma_option == "none" ? 0 : $ma_option * 1;
-            $sql = "INSERT into $model->table_order_detail (so_luong,don_gia,thanh_tien,discount,id_order,ma_san_pham,ma_option) VALUES ($quantity*1,$don_gia*1.0,$tam_tinh*1.0,$giam_gia*1.0,$id_order,$id_sp*1,$option_order)";
+            $option_order = $ma_option == NULL ? 0 : $ma_option * 1;
+            $sql = "INSERT into $model->table_order_detail (so_luong,don_gia,thanh_tien,discount,RAM,ROM,id_order,ma_san_pham,ma_option) VALUES ($quantity*1,$don_gia*1.0,$tam_tinh*1.0,$giam_gia*1.0,'$RAM','$ROM',$id_order,$id_sp*1,$option_order)";
             $stmt = $model->conn->prepare($sql);
             $stmt->execute();
             $option_order !== 0 ? create_order::Update_sl_Sp_Option($id_sp, $quantity, $option_order) : create_order::Update_sl_Sp($id_sp, $quantity);

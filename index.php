@@ -44,6 +44,11 @@ switch ($url) {
     case 'list_user':
         AdminController::list_user();
         break;
+        // user_page
+    case 'user_page':
+        HomeController::user_page();
+        break;
+        //created_acc 
     case 'Created_account':
         AdminController::created_acc();
         break;
@@ -202,7 +207,30 @@ switch ($url) {
     case 'update_lib_image':
         AdminController::update_lib_image();
         break;
+        // account
+    case 'form_logn_in':
+        HomeController::form_logn_in();
+        break;
+        // register
+    case 'form_register':
+        HomeController::form_register();
+        break;
+        // forgot
+    case 'form_forgot_pass':
+        HomeController::form_forgot();
+        break;
+        // sign_in
+        // account
+    case 'sign_in':
+        HomeController::logn_in();
+        break;
+
     case 'unset':
+        unset($_SESSION['list_cart']);
+        header('location: index.php');
+        break;
+    case 'logn_out':
+        unset($_SESSION['user_account']);
         unset($_SESSION['list_cart']);
         header('location: index.php');
         break;

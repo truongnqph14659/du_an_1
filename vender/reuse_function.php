@@ -9,3 +9,13 @@ function insert_img($image)
     }
     return $image_currently;
 }
+function check_data_option($arr)
+{
+    $new_arr = array();
+    foreach ($arr as $value) {
+        if ($value !== '') {
+            $new_arr[] = $value;
+        }
+    }
+    return $new_arr;
+}

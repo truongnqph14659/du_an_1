@@ -140,7 +140,7 @@ class AdminController extends BaseModel
     // edit_option_sp
     static function edit_option_sp()
     {
-        require_once './app/controller/Fetch_Data/fetch_one_sp_option.php';
+        require_once './app/controller/Fetch_Data/fetch_one_option_sp.php';
         include './app/views/admin/component/products/edit_sp_option.php';
     }
     // update_option_sp

@@ -7,7 +7,7 @@ class fetch_order extends BaseModel
     static function top_products($id)
     {
         $model = new static;
-        $sql = "SELECT user.user_name,san_pham.don_gia,san_pham.ten_sp,order_details.so_luong,orders.user_id FROM san_pham JOIN order_details ON san_pham.ma_san_pham = order_details.ma_san_pham JOIN orders ON order_details.id_order = orders.id_order JOIN user ON orders.user_id = user.user_id WHERE orders.id_order = $id";
+        $sql = "SELECT user.user_name,san_pham.don_gia,san_pham.ten_sp,order_details.thanh_tien,order_details.RAM,order_details.ROM,order_details.so_luong,orders.user_id,user.sdt,user.dia_chi,user.xa_phuong,user.quan_huyen,user.tinh_thanh FROM san_pham JOIN order_details ON san_pham.ma_san_pham = order_details.ma_san_pham JOIN orders ON order_details.id_order = orders.id_order JOIN user ON orders.user_id = user.user_id WHERE orders.id_order = $id";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         $resual = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -15,4 +15,4 @@ class fetch_order extends BaseModel
     }
 }
 $id = $_GET['id'];
-$data_top_views = fetch_order::top_products($id);
+$data_orders = fetch_order::top_products($id);

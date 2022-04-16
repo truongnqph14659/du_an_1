@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +24,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= server_port ?>/du_an_1/public/css1/product.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid header_bg">
@@ -229,14 +228,14 @@
                 <div class="d-flex flex-column mb-3">
                     <h5 class="font-weight-semi-bold mb-3">Địa chỉ 1</h5>
                     <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Số 129 + 131, phố Lê
-                    Thanh Nghị, Phường Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p>
+                        Thanh Nghị, Phường Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>nhom1@fpt.edu.vn</p>
                     <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
                 </div>
                 <div class="d-flex flex-column">
                     <h5 class="font-weight-semi-bold mb-3">Địa chỉ 2</h5>
                     <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Số 129 + 131, phố Lê
-                    Thanh Nghị, Phường Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p>
+                        Thanh Nghị, Phường Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>nhom1@fpt.edu.vn</p>
                     <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
                 </div>

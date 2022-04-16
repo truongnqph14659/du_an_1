@@ -31,80 +31,70 @@
               <th>Status</th>
               <th>Đang xử lý</th>
               <th>Đóng gói</th>
-              <th>Xuất kho</th>
-              <th>đã thanh toán</th>
+              <th>Đang vận chuyển</th>
+              <th>Đã giao</th>
+              <th>Đã hủy</th>
               <th>Edit</th>
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data_top_views as $key => $value) : ?>
+            <?php foreach ($data_orders as $key => $value) : ?>
               <tr>
-                <td>1.</td>
-                <td><?php echo $value['user_name'] ?></td>
-                <td><?php echo $value['sdt'] ?></td>
+                <td>1</td>
+                <td><?= $value['user_name'] ?></td>
+                <td><?= $value['sdt'] ?></td>
                 <td>
                   <?php
                   if ($value['status_order'] == 'x') : ?>
-                    <?php echo 'xu ly'; ?>
+                    <?php echo 'Đang xử lý'; ?>
                   <?php elseif ($value['status_order'] == 'y') : ?>
-                    <?php echo 'đóng gói'; ?>
+                    <?php echo 'Đóng gói'; ?>
                   <?php elseif ($value['status_order'] == 'z') : ?>
-                    <?php echo 'thanh công'; ?>
+                    <?php echo 'Đã giao'; ?>
                   <?php elseif ($value['status_order'] == 's') : ?>
-                    <?php echo 'đang giao hàng'; ?>
+                    <?php echo 'Đang vận chuyển'; ?>
+                  <?php elseif ($value['status_order'] == 'c') : ?>
+                    <?php echo 'Đã hủy'; ?>
                   <?php endif; ?>
                 </td>
                 </td>
                 <td class="td_status">
-                  <form action="">
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox">
-                        <?php
-                        if ($value['status_order'] == 'x') : ?>
-                          <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 'x' ?>" value="60" checked>
-                        <?php else : ?>
-                          <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 'x' ?>" value="60">
-                        <?php endif; ?>
-                      </div>
-                    </div>
-                </td>
-                <td>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                      <?php if ($value['status_order'] == 'y') : ?>
-                        <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 'y' ?>" value="60" checked>
-                      <?php else : ?>
-                        <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 'y' ?>" value="60">
-                      <?php endif; ?>
+                      <input type="radio" class="checked" data-id="<?= $value['id_order'] ?>" data-status="x" <?= $value['status_order'] == 'x' ? 'checked' : '' ?> value="60">
                     </div>
                   </div>
                 </td>
                 <td>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                      <?php if ($value['status_order'] == 's') : ?>
-                        <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 's' ?>" value="60" checked>
-                      <?php else : ?>
-                        <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 's' ?>" value="60">
-                      <?php endif; ?>
+                      <input type="radio" class="checked" data-id="<?= $value['id_order'] ?>" data-status="y" <?= $value['status_order'] == 'y' ? 'checked' : '' ?> value="60">
                     </div>
                   </div>
                 </td>
                 <td>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                      <?php if ($value['status_order'] == 'z') : ?>
-                        <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 'z' ?>" value="60" checked>
-                      <?php else : ?>
-                        <input type="radio" class="checked" name="age" data-id="<?= $value['id_order'] ?>" data-status="<?= 'z' ?>" value="60">
-                      <?php endif; ?>
+                      <input type="radio" class="checked" data-id="<?= $value['id_order'] ?>" data-status="s" <?= $value['status_order'] == 's' ? 'checked' : '' ?> value="60">
                     </div>
                   </div>
-                  </form>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="radio" class="checked" data-id="<?= $value['id_order'] ?>" data-status="z" <?= $value['status_order'] == 'z' ? 'checked' : '' ?> value="60">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="radio" class="checked" data-id="<?= $value['id_order'] ?>" data-status="c" <?= $value['status_order'] == 'c' ? 'checked' : '' ?> value="60">
+                    </div>
+                  </div>
                 </td>
                 <td>
                   <span class="badge badge-success"><a href="order_detail?id=<?= $value['id_order'] ?>"><i class="fas fa-eye" style="color: #ffff;"></i></a></span>
-                  <span class="badge bg-danger" data-id="<?php echo $value['id_order'] ?>"><i class="fas fa-trash-alt"></i></span>
                 </td>
               </tr>
             <?php endforeach; ?>
@@ -132,7 +122,6 @@ require_once './vender/jquery_lib.php';
     data.addEventListener('click', () => {
       var id = $(data).data('id');
       var status = $(data).data('status')
-      alert(status);
       $.ajax({
         url: "update_status",
         method: "GET",

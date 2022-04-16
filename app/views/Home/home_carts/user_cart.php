@@ -56,7 +56,9 @@
                                     </th>
                                     <td class="b"><?= $_SESSION['list_cart'][$orders]['ten_sp'] ?></td>
                                     <td class="c price_item"><?= number_format($_SESSION['list_cart'][$orders]['don_gia']) ?></td>
-                                    <td class="c"><input type="number" min="1" data-stores="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" data-discount="<?= $_SESSION['list_cart'][$orders]['giam_gia'] ?>" data-item="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>" data-price="<?php echo $_SESSION['list_cart'][$orders]['don_gia'] ?>" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" name="quantity_order" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" class="form-control quantity_order m-auto"></td>
+                                    <td class="c">
+                                        <input type="number" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" min="1" data-stores="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" data-discount="<?= $_SESSION['list_cart'][$orders]['giam_gia'] ?>" data-item="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>" data-price="<?php echo $_SESSION['list_cart'][$orders]['don_gia'] ?>" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" class="form-control quantity_order">
+                                    </td>
                                     <td class="c tong_tien_item">
                                         <?php
                                         $thanh_tien = number_format($_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity']);

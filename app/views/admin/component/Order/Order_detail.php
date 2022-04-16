@@ -30,16 +30,16 @@
           </div>
           <!--  fake data  -->
 
-          <?php foreach ($data_top_views as $key => $value) : ?>
+          <?php foreach ($data_orders as $key => $value) : ?>
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Tên sản phẩm</label>
                 <!-- <input type="text" id="inputName" class="form-control" value="AdminLTE"> -->
-                <p><?php echo $value['ten_sp'] ?></p>
+                <p><?= $value['ten_sp'] . ' ' . $value['RAM'] . '-' . $value['ROM'] ?></p>
               </div>
               <div class="form-group">
                 <label for="inputDescription">Price</label>
-                <p><?php echo $value['don_gia'] ?></p>
+                <p><?php echo number_format($value['don_gia']) ?>đ</p>
               </div>
               <div class="form-group">
                 <label for="inputDescription">image</label>
@@ -70,34 +70,38 @@
           <div class="card-body">
             <div class="form-group">
               <label for="inputEstimatedBudget">Name</label>
-              <p>tên người nhận :<strong><?php echo $data_top_views[0]['user_name'] ?></strong></p>
+              <p>tên người nhận :<strong><?= $data_orders[0]['user_name'] ?></strong></p>
             </div>
             <div class="form-group">
               <label for="inputSpentBudget">Phone Number</label>
-              <p>số điện thoại :<strong>0869919717</strong></p>
+              <p>số điện thoại :<strong><?= $data_orders[0]['sdt'] ?></strong></p>
             </div>
             <div class="form-group">
               <label for="inputEstimatedDuration">Address</label>
-              <p>địa chỉ giao hàng :85/73 chợ tân xuân</strong></p>
+              <p><?= $data_orders[0]['dia_chi'] . ',' . $data_orders[0]['xa_phuong'] . ',' . $data_orders[0]['quan_huyen'] . ',' . $data_orders[0]['tinh_thanh'] ?></strong></p>
             </div>
             <div class="form-group">
               <label for="inputEstimatedDuration">Note</label>
-              <p>Ghi chú :<strong>nguy cơ bom hàng</strong></p>
+              <p>Ghi chú :<strong></strong></p>
             </div>
           </div>
           <!-- /.card-body -->
         </div>
         <div class="card card-success">
           <div class="card-header">
-            <h4 class="card-title w-100">
-              <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
-                Collapsible Group Item #1
-              </a>
-            </h4>
           </div>
           <div id="collapseOne" class="collapse show" data-parent="#accordion">
             <div class="card-body">
-              <p>Tổng Đơn Hàng : <strong>2</strong> </p>
+              <p>Tổng Đơn Hàng : <strong><?= count($data_orders) ?></strong> </p>
+              <p>Thành tiền: <strong>
+                  <?php
+                  $thanh_tien = 0;
+                  foreach ($data_orders as $value) {
+                    $thanh_tien += $value['thanh_tien'];
+                  }
+                  echo number_format($thanh_tien);
+                  ?>đ
+                </strong></p>
             </div>
           </div>
         </div>

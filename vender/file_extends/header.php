@@ -3,7 +3,7 @@ require_once './vender/file_extends/header_cart.php';
 ?>
 <!-- Topbar End -->
 <!-- Navbar Start -->
-<div class="container-fluid mb-5">
+<div class="container-fluid">
     <div class="row border-top px-xl-5">
         <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">

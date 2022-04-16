@@ -22,6 +22,12 @@ class HomeController
     {
         require_once './app/views/Home/contact/contact.php';
     }
+    // user_page
+    static function user_page()
+    {
+        require_once './app/controller/Fetch_Data/fetch_order.php';
+        include './app/views/Home/user/user_page.php';
+    }
     // add to cart list
     static function add_to_cart()
     {
@@ -56,5 +62,25 @@ class HomeController
     static function treeview_comment()
     {
         require_once './app/controller/Fetch_Data/fetch_comments.php';
+    }
+    // logn_in
+    static function form_logn_in()
+    {
+        require_once './app/views/Home/user/sign_in.php';
+    }
+    // register
+    static function form_register()
+    {
+        require_once './app/views/Home/user/register.php';
+    }
+    // forgot
+    static function form_forgot()
+    {
+        require_once './app/views/Home/user/forgotpassword.php';
+    }
+    // logn_in
+    static function logn_in()
+    {
+        require_once './app/controller/User_Account/logn_in.php';
     }
 }

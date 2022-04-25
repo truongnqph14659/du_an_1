@@ -12,7 +12,6 @@ class update_status_Controller extends BaseModel
         $sql = "UPDATE $model->table SET status_order = '$status' WHERE id_order = $id";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
-        header("Location:list_order");
     }
 }
 extract($_GET);

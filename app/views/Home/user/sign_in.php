@@ -18,7 +18,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
 
@@ -41,14 +41,15 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="<?= server_port ?>du_an_1/public/images_stores/images/signin-image.jpg" alt="sing up image"></figure>
+
+                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_vmpmrihb.json" background="transparent" speed="1" style="width: 285px; height: 341px;" loop autoplay></lottie-player>
                         <a href="form_register" class="signup-image-link">Chưa có tài khoản</a>
-                        <a href="forgot_pass" class="signup-image-link">Quên mật khẩu</a>
+                        <a href="check_forgot_pass" class="signup-image-link">Quên mật khẩu</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Đăng nhập</h2>
-                        <form class="register-form" id="login-form" action="sign_in" enctype="multipart/form-data" method="POST">
+                        <form class="register-form" id="login-form" name="login-form" action="sign_in" enctype="multipart/form-data" method="POST">
                             <div class="form-group">
                                 <label for="your_name"><i class="fa fa-envelope" aria-hidden="true"></i></label>
                                 <input type="email" name="user_name" id="your_name" placeholder="Email" />
@@ -63,7 +64,7 @@
                                     tài khoản</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Đăng nhâp" />
                             </div>
                         </form>
                     </div>
@@ -82,6 +83,9 @@
             swal("Khoan! Tài khoản chưa đăng ký?");
         <?php endif; ?>
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="http://localhost:80/du_an_1/public/js/form_values.js"></script>
 </body>
 
 </html>

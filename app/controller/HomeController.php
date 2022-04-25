@@ -36,7 +36,19 @@ class HomeController
     //view cart 
     static function cart()
     {
-        require_once './app/views/Home/home_carts/user_cart.php';
+        require_once './app/controller/Fetch_Data/fetch_one_user.php';
+        include './app/views/Home/home_carts/user_cart.php';
+    }
+    // checkout_address
+    static function checkout_address()
+    {
+        require_once './app/controller/Fetch_Data/fetch_one_user.php';
+        include './app/views/Home/user/changeaddress.php';
+    }
+    // re_address
+    static function re_address()
+    {
+        require_once './app/controller/Update_Data/re_address.php';
     }
     //view cart 
     static function delete_cart_item()
@@ -73,10 +85,20 @@ class HomeController
     {
         require_once './app/views/Home/user/register.php';
     }
-    // forgot
-    static function form_forgot()
+    // register_account
+    static function register_account()
     {
-        require_once './app/views/Home/user/forgotpassword.php';
+        require_once './app/controller/Insert_Data/InsertUser.php';
+    }
+    // forgot
+    static function check_forgot_pass()
+    {
+        require_once './app/views/Home/user/formCheckEmail.php';
+    }
+    // repass
+    static function repass()
+    {
+        require_once './app/controller/Fetch_Data/fetch_email.php';
     }
     // logn_in
     static function logn_in()

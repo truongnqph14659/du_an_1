@@ -27,8 +27,8 @@ extract($data_sp);
 $flag = false;
 if (isset($_SESSION['list_cart'])) {
     foreach ($_SESSION['list_cart'] as $orders => $values) {
-        if ($_SESSION["list_cart"][$orders]["id_sp"] == $id_sp) {
-            $quantity = $_SESSION["list_cart"][$orders]["quantity"] + 1;
+        if ($values["id_sp"] == $id_sp) {
+            $quantity = $values["quantity"] + 1;
             $_SESSION["list_cart"][$orders] = [
                 'id_sp' => $ma_san_pham,
                 'ten_sp' => $ten_sp,
@@ -98,22 +98,22 @@ echo '<div class="cart_list_info">
     <ul class="header_cart_list-items">';
 foreach ($_SESSION['list_cart'] as $orders => $values) {
     echo '<li class="header_cart-item">';
-    echo '<img  class="header_cart-img" src="' . $_SESSION["list_cart"][$orders]["images_sp"] . '">
+    echo '<img  class="header_cart-img" src="' . $values["images_sp"] . '">
     <div class="header_cart-info">
     <div class="header_cart_item_head">
     <h5 class="header_cart_item-name text-truncate">'
-        . $_SESSION['list_cart'][$orders]['ten_sp'] .
+        . $values['ten_sp'] .
         '</h5>' .
         '<div class="header_cart_item-price-wrap">
      <span class="header_cart_item-price">'
-        . number_format($_SESSION['list_cart'][$orders]['don_gia']) . '
+        . number_format($values['don_gia']) . '
         <span class="quantity_style">x</span>
-        <span class="quantity_item quantity_style">' . $_SESSION['list_cart'][$orders]['quantity'] . '</span>
+        <span class="quantity_item quantity_style">' . $values['quantity'] . '</span>
         </div>
      </div>' .
         '<div class="header_cart_item-body">
      <span class="header_cart_item-description">
-         màu sắc: ' . $_SESSION['list_cart'][$orders]['mau_sac'] .
+         màu sắc: ' . $values['mau_sac'] .
         '</span>
      </div>
      </div>';

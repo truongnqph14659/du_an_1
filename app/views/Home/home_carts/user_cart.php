@@ -34,8 +34,8 @@
     <!-- Shop Start -->
     <div class="container">
         <h4 class="title_giohang">Giỏ hàng</h4>
-        <form action="" method="post">
-            <div class="table-responsive-xl">
+        <form action="" method="post" class="row d-flex py-3">
+            <div class="table-responsive-xl col-9">
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -52,22 +52,22 @@
                             <?php foreach ($_SESSION['list_cart'] as $orders => $values) : ?>
                                 <tr class="tr_data_cart">
                                     <th class="a">
-                                        <img src="<?= $_SESSION['list_cart'][$orders]['images_sp'] ?>" class="rounded mx-auto d-block">
+                                        <img src="<?= $values['images_sp'] ?>" class="rounded mx-auto d-block">
                                     </th>
-                                    <td class="b"><?= $_SESSION['list_cart'][$orders]['ten_sp'] ?></td>
-                                    <td class="c price_item"><?= number_format($_SESSION['list_cart'][$orders]['don_gia']) ?></td>
+                                    <td class="b"><?= $values['ten_sp'] ?></td>
+                                    <td class="c price_item"><?= number_format($values['don_gia']) ?></td>
                                     <td class="c">
-                                        <input type="number" value="<?= $_SESSION['list_cart'][$orders]['quantity'] ?>" min="1" data-stores="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" data-discount="<?= $_SESSION['list_cart'][$orders]['giam_gia'] ?>" data-item="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>" data-price="<?php echo $_SESSION['list_cart'][$orders]['don_gia'] ?>" max="<?= $_SESSION['list_cart'][$orders]['sl_luu_kho'] ?>" class="form-control quantity_order">
+                                        <input type="number" value="<?= $values['quantity'] ?>" min="1" data-stores="<?= $values['sl_luu_kho'] ?>" data-discount="<?= $values['giam_gia'] ?>" data-item="<?php echo $values['id_sp'] ?>" data-price="<?php echo $values['don_gia'] ?>" max="<?= $values['sl_luu_kho'] ?>" class="form-control quantity_order">
                                     </td>
                                     <td class="c tong_tien_item">
                                         <?php
-                                        $thanh_tien = number_format($_SESSION['list_cart'][$orders]['don_gia'] * $_SESSION['list_cart'][$orders]['quantity']);
+                                        $thanh_tien = number_format($values['don_gia'] * $values['quantity']);
                                         echo $thanh_tien . "đ";
                                         ?>
                                     </td>
                                     <td>
                                         <div class="d-grid gap-xl-1 d-md-block">
-                                            <button class="btn btn-primary delete_items" data-id="<?php echo $_SESSION['list_cart'][$orders]['id_sp'] ?>">xóa</button>
+                                            <button class="btn btn-primary delete_items" data-id="<?php echo $values['id_sp'] ?>">xóa</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -76,18 +76,46 @@
                     </tbody>
                 </table>
             </div>
-            <div class="d-xl-flex justify-content-xl-between flex_payment">
-                <div class="continue_purchase">
-                    <div class="card-body">
-                        <a href="index.php">tiếp tục mua sắm</a>
+            <div class="styles__Right-sc-1mncg38-3 eEhtFa col-3">
+                <div class="right-inner" style="top: -300px;">
+                    <div>
+                        <div class="flcp_container" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAADIAQMAAACNufaLAAAAA1BMVEX///+nxBvIAAAAKUlEQVR42u3BAQ0AAADCIPunNsc3YAAAAAAAAAAAAAAAAAAAAAAAACQcSjgAAcybzv4AAAAASUVORK5CYII=&quot;); background-size: cover; border-radius: 4px;">
+                            <div class="Section__Container-sc-r6ysni-0 styles__StyledAddressBlock-sc-vgfrvy-0 bVA-DDf cTGPxG">
+                                <div class="block-header">
+                                    <h3 class="block-header__title">Giao tới</h3><a class="block-header__nav" href="checkout_Address?id_user=<?= $_SESSION['list_cart'][$orders]['id_user'] ?>">Thay đổi</a>
+                                </div>
+                                <div class="customer_info">
+                                    <p class="customer_info__name">
+                                        <?php
+                                        if (isset($user)) {
+                                            echo $user['user_name'];
+                                        }
+                                        ?>
+                                    </p>
+                                    <i>
+                                    </i>
+                                    <p class="customer_info__phone">
+                                        <?php
+                                        if (isset($user)) {
+                                            echo $user['sdt'];
+                                        }
+                                        ?>
+                                    </p>
+                                </div>
+                                <div class="address">
+                                    <?php
+                                    if (isset($user)) {
+                                        echo $user['dia_chi'] . ',' . $user['xa_phuong'] . ',' . $user['quan_huyen'] . ',' . $user['tinh_thanh'];
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="table-responsive-sm">
-                    <table class="table table-borderless table_payment">
-                        <tbody>
-                            <tr>
-                                <td class="price_text">tạm tính:</td>
-                                <td class="price_number">
+                    <div class="styles__StyledPriceSummary-sc-12mfsgy-0 iRKLRb">
+                        <ul class="prices__items">
+                            <li class="prices__item"><span class="prices__text">Tạm tính</span>
+                                <span class="prices__value price_number">
                                     <?php
                                     $tong_tien = 0;
                                     foreach ($_SESSION['list_cart'] as $orders => $values) {
@@ -95,17 +123,13 @@
                                     }
                                     echo number_format($tong_tien) . "đ";
                                     ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="price_text">giảm giá:</td>
-                                <td class="giam_gia">
-                                    0đ
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="price_text">tổng tiền:</td>
-                                <td class="price_number_tong">
+                                </span>
+                            </li>
+                            <li class="prices__item"><span class="prices__text">Giảm giá</span><span class="prices__value">0đ</span></li>
+                        </ul>
+                        <div class="prices__total"><span class="prices__text">Tổng tiền</span>
+                            <div class="prices__content">
+                                <span class="prices__value prices__value--final price_number_tong">
                                     <?php
                                     $tong_tien = 0;
                                     foreach ($_SESSION['list_cart'] as $orders => $values) {
@@ -113,18 +137,17 @@
                                     }
                                     echo number_format($tong_tien) . "đ";
                                     ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <!-- đang fake id_user đã đăng nhập để test chức năng đặt hàng -->
-                                    <div>
-                                        <a class="payment_button" href="Create_Order?id_user=1">thanh toán</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </span>
+                                <span class="prices__value--noted">(Đã bao gồm VAT nếu có)</span>
+                            </div>
+                        </div>
+                        <p class="asa-summary-disclaimer">* Giá trị sẽ được cập nhật liên tục và thông báo chính xác sau khi đặt hàng.</p>
+                    </div>
+                    <a class="payment_button bsEPkA" href="Create_Order?id_user=<?= $_SESSION['user_account']['user_id'] ?>">
+                        <!-- <button class="styles__StyledButton-sc-hokrdw-0 bsEPkA"> -->
+                        Mua hàng
+                        <!-- </button> -->
+                    </a>
                 </div>
             </div>
         </form>

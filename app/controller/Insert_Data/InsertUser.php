@@ -17,7 +17,14 @@ if (isset($_POST['submit'])) {
             $sql = "INSERT into $model->table ($db_data) VALUES ($form_data)";
             $stmt = $model->conn->prepare($sql);
             $stmt->execute();
-            header("location:list_user");
+            if (isset($_SESSION['user_account']) && $_SESSION['user_account']['user_role'] == 1) {
+                header("location:list_user");
+            } else {
+                $_SESSION['register'] = [
+                    'success' => 'register_success'
+                ];
+                header("location:index.php");
+            }
         }
     }
     CreateUser::Insert_User($form_value, $db_data);

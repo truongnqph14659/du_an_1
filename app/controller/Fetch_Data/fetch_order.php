@@ -33,9 +33,12 @@ class fetch_order extends BaseModel
     }
 }
 $data_orders = fetch_order::data_order();
-$data = fetch_order::get_order(1);
-$data_orders_user = array();
-foreach ($data as $value) {
-    $result = fetch_order::data_ql_orders($value['user_id'], $value['id_order']);
-    $data_orders_user[$value['id_order']] = $result;
+if ($_SESSION['user_account'] && $_SESSION['user_account']['user_role'] == 0) {
+    $id_user = $_SESSION['user_account']['user_id'];
+    $data = fetch_order::get_order($id_user);
+    $data_orders_user = array();
+    foreach ($data as $value) {
+        $result = fetch_order::data_ql_orders($value['user_id'], $value['id_order']);
+        $data_orders_user[$value['id_order']] = $result;
+    }
 }

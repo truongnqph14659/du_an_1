@@ -271,7 +271,7 @@
                                             $id_user = $_SESSION['user_account']['user_id'];
                                         }
                                         ?>
-                                        <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                                        <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 && isset($_SESSION['user_account']) && $_SESSION['user_account']['user_role'] == 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
                                     </button>
                                 </div>
                             </div>

@@ -13,6 +13,7 @@ class fetch_comments extends BaseModel
         function buildTreeView($arr, $parent, $level = 0, $prelevel = -1)
         {
             global $html;
+            $user_id = isset($_SESSION['user_account']) == true ? $_SESSION['user_account']['user_id'] : 0;
             foreach ($arr as $data) {
                 if ($parent == $data['parent_bl']) {
                     if ($level > $prelevel) {
@@ -36,7 +37,8 @@ class fetch_comments extends BaseModel
                             <div class="media-body">
                             <div class="mar-btm">
                             <a href="#" class="btn-link text-semibold media-heading box-inline"></a>
-                            <p class="text-muted text-sm">' . $date . '</p>
+                            <p class="text-muted text-sm">' . $data['user_name'] . '</p>
+                            <span>' . $date . '</span>
                                 </div>
                                 <p>' . $data['noi_dung_bl'] . '</p>
                                 ' . $image . '
@@ -53,7 +55,7 @@ class fetch_comments extends BaseModel
                                         <textarea class="form-control" name="content_comment" rows="2" placeholder="bình luận về sản phẩm"></textarea>
                                         <input style="display:none" name="upload" id="input-element" type="file">
                                         <input type="text" name="parent_id" value="' . $data['ma_binh_luan'] . '" hidden>
-                                        <input type="text" name="user_id" value="' . $data['user_id'] . '" hidden>
+                                        <input type="text" name="user_id" value="' . $user_id . '" hidden>
                                         <input type="text" name="ma_san_pham" value="' . $data['ma_san_pham'] . '" hidden>
                                         <button class="btn btn-sm btn-primary pull-right submit_form"><i class="fa fa-pencil fa-fw"></i> Share</button>
                                     </form>

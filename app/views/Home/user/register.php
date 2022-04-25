@@ -42,41 +42,44 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Đăng ký</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form action="register_account" method="POST" class="register_account" id="register-form" name="register-form" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="name"><i class="fa fa-address-book" aria-hidden="true"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Tên người dùng" />
+                                <input type="file" class="form-control" name="avatar" id="images_sp" hidden>
+                                <input type="radio" name="vai_tro" id="" value="0" hidden>
+                                <input type="radio" name="status" id="on" value="1" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Email của bạn" />
+                                <input type="email" name="email" placeholder="Email của bạn" />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="fa fa-mobile" aria-hidden="true"></i></label>
-                                <input type="number" name="sdt" id="email" placeholder="Sô điện thoại của bạn" />
+                                <input type="number" name="sdt" placeholder="Sô điện thoại của bạn" />
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Mật khẩu" />
+                                <input type="password" name="password" placeholder="Mật khẩu" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"> <i class="fa fa-street-view" aria-hidden="true"></i></label>
-                                <input type="text" name="dia_chi" id="name" placeholder="Đia chỉ" />
+                                <input type="text" name="dia_chi" placeholder="Đia chỉ" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
-                                <input type="text" name="xa_phuong" id="name" placeholder="Xã phường" />
+                                <input type="text" name="xa_phuong" placeholder="Xã phường" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
-                                <input type="text" name="quan_huyen" id="name" placeholder="Quận huyện" />
+                                <input type="text" name="quan_huyen" placeholder="Quận huyện" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
-                                <input type="text" name="tinh_thanh" id="name" placeholder="Tỉnh thành" />
+                                <input type="text" name="tinh_thanh" placeholder="Tỉnh thành" />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                                <input type="submit" name="submit" id="signup" class="form-submit" value="Đăng ký" />
                             </div>
                         </form>
                     </div>
@@ -89,7 +92,9 @@
         <?php
         require_once './vender/file_extends/footer.php';
         ?>
-
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script src="http://localhost:80/du_an_1/public/js/form_values.js"></script>
 </body>
 
 </html>

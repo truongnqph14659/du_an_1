@@ -85,6 +85,13 @@ require_once './vender/src_script_admin.php';
             div_opton.classList.toggle('d-flex')
         })
     })
+    // chưa tìm hiểu chi tiết cái này bận quá lắp tạm làm đc vc là ko rồi
+    window.addEventListener("pageshow", function(event) {
+        var perfEntries = performance.getEntriesByType("navigation");
+        if (perfEntries[0].type === "back_forward") {
+            location.reload();
+        }
+    });
 </script>
 
 <?php

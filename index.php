@@ -215,16 +215,47 @@ switch ($url) {
     case 'form_register':
         HomeController::form_register();
         break;
+        // register_account
+    case 'register_account':
+        HomeController::register_account();
+        break;
         // forgot
-    case 'form_forgot_pass':
-        HomeController::form_forgot();
+    case 'check_forgot_pass':
+        HomeController::check_forgot_pass();
+        break;
+        // repass
+    case 'repass':
+        HomeController::repass();
+        break;
+        // notice chờ
+    case 'notice':
+        require_once './app/views/Home/user/notice.php';
         break;
         // sign_in
-        // account
+    case 'update_pass':
+        require_once './app/controller/Fetch_Data/check_token.php';
+        if ($token_boolean) {
+            require_once './app/views/Home/user/form_update_pass.php';
+        } else {
+            echo "mã thay đổi mật khẩu của bạn đã hết hạn hãy tạo lại mã mới!";
+        }
+        break;
+        // change_pass
+    case 'change_pass':
+        require_once './app/controller/Update_Data/update_password.php';
+        break;
+        // checkout_Address
+    case 'checkout_Address':
+        HomeController::checkout_address();
+        break;
+        // re_address
+    case 're_address':
+        HomeController::re_address();
+        break;
+        // sign_in
     case 'sign_in':
         HomeController::logn_in();
         break;
-
     case 'unset':
         unset($_SESSION['list_cart']);
         header('location: index.php');
@@ -232,6 +263,10 @@ switch ($url) {
     case 'logn_out':
         unset($_SESSION['user_account']);
         unset($_SESSION['list_cart']);
+        header('location: index.php');
+        break;
+    case 'unset_register':
+        unset($_SESSION['register']);
         header('location: index.php');
         break;
     case 'update_status':

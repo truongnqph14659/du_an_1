@@ -207,12 +207,13 @@ dl {
 }
 
 /* =====================css cart list information============== */
+
 .dropdown-menu {
   position: absolute;
   left: 730px;
   top: 52px;
 }
-.user_name:hover{
+.user_name:hover {
   cursor: pointer;
 }
 .cart_list {

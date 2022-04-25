@@ -128,9 +128,12 @@
                         </div>
                         <div>
                             <?php
-                            $id_user = 1;
+                            $id_user = 0;
+                            if (isset($_SESSION['user_account'])) {
+                                $id_user = $_SESSION['user_account']['user_id'];
+                            }
                             ?>
-                            <input class="btn btn-primary <?= $data_sp["sl_luu_kho"] > 0 ? 'submit' : '' ?>" id="success" role="button" name="submit" type="submit" data-id="<?= $id_sp ?>" data-option="<?= isset($_GET['ma_option']) == true ? $_GET['ma_option'] : 0 ?>" data-user="<?= $id_user ?>" value="Thêm vào giỏ hàng">
+                            <input class="btn btn-primary <?= $data_sp["sl_luu_kho"] > 0  ? 'submit_cart' : '' ?>" id="success" role="button" name="submit" type="submit" data-id="<?= $id_sp ?>" data-option="<?= isset($_GET['ma_option']) == true ? $_GET['ma_option'] : 0 ?>" data-user="<?= $id_user ?>" value="Thêm vào giỏ hàng">
                         </div>
                     </div>
                 </div>
@@ -151,9 +154,9 @@
                                         <textarea class="form-control" name="content_comment" rows="2" placeholder="bình luận về sản phẩm"></textarea>
                                         <input style="display:none" name="upload" id="input-element" type="file">
                                         <input type="text" name="parent_id" value="0" hidden>
-                                        <input type="text" name="user_id" value="1" hidden>
+                                        <input type="text" name="user_id" value="<?= isset($_SESSION['user_account']) == true ? $_SESSION['user_account']['user_id'] : 0 ?>" hidden>
                                         <input type="text" name="ma_san_pham" value="<?= $id_sp ?>" hidden>
-                                        <button class="btn btn-sm btn-primary pull-right" type="submit" id="submit_form"><i class="fa fa-pencil fa-fw"></i> Share</button>
+                                        <button class="btn btn-sm btn-primary pull-right" data-id_user="<?= isset($_SESSION['user_account']) == true ? $_SESSION['user_account']['user_id'] : 0 ?>" type="submit" id="submit_form"><i class="fa fa-pencil fa-fw"></i> Share</button>
                                     </form>
                                     <div class="mar-top clearfix">
                                         <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
@@ -167,138 +170,142 @@
                                     <!-- Newsfeed Content -->
                                     <!--===================================================-->
                                     <?php
-                                    require_once './app/controller/Fetch_Data/fetch_comments.php';
+                                    if (isset($_SESSION['user_account'])) {
+                                        require_once './app/controller/Fetch_Data/fetch_comments.php';
+                                    }
                                     ?>
                                     <!--===================================================-->
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                </div>
-                <div class="col-4">
-                    <h5>thông số kỹ thuật</h5>
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="col-2">chủng loại</th>
-                                <td class="col-2">
-                                    <?= $data_sp["chung_loai"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">part number</th>
-                                <td class="col-2">
-                                    <?= $data_sp["part_number"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">màu sắc</th>
-                                <td class="col-2">
-                                    <?= $data_sp["mau_sac"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">CPU</th>
-                                <td class="col-2">
-                                    <?= $data_sp["CPU"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">RAM</th>
-                                <td class="col-2">
-                                    <?= $data_sp["RAM"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">ROM</th>
-                                <td class="col-2">
-                                    <?= $data_sp["ROM"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">VGA</th>
-                                <td class="col-2">
-                                    <?= $data_sp["VGA"] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="col-2">Màn Hinh</th>
-                                <td class="col-2">
-                                    <?= $data_sp["man_hinh"] ?> inch
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            </div>
+            <div class="col-4">
+                <h5>thông số kỹ thuật</h5>
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="col-2">chủng loại</th>
+                            <td class="col-2">
+                                <?= $data_sp["chung_loai"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">part number</th>
+                            <td class="col-2">
+                                <?= $data_sp["part_number"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">màu sắc</th>
+                            <td class="col-2">
+                                <?= $data_sp["mau_sac"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">CPU</th>
+                            <td class="col-2">
+                                <?= $data_sp["CPU"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">RAM</th>
+                            <td class="col-2">
+                                <?= $data_sp["RAM"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">ROM</th>
+                            <td class="col-2">
+                                <?= $data_sp["ROM"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">VGA</th>
+                            <td class="col-2">
+                                <?= $data_sp["VGA"] ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="col-2">Màn Hinh</th>
+                            <td class="col-2">
+                                <?= $data_sp["man_hinh"] ?> inch
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <!-- sản phẩm liên quan -->
-        <div class="col-12">
-            <h6>sản phẩm liên quan</h6>
-            <div class="row pb-3">
-                <?php foreach ($related_sp as $values) : ?>
-                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                        <div class="card product-item border-0 mb-4">
-                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                            </div>
-                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                    <h6 class="text-truncate mb-3">
-                                        <?php
-                                        $string_ten = (strlen($values["ten_sp"]) > 25) ? substr($values["ten_sp"], 0, 25) . '...' : $values["ten_sp"];
-                                        echo $string_ten;
-                                        ?>
-                                    </h6>
-                                </a>
-                                <ul class="ul_products list-unstyled">
-                                    <li>
-                                        <?php
-                                        $string_cpu = (strlen($values["CPU"]) > 15) ? substr($values["CPU"], 0, 15) . '...' : $values["CPU"];
-                                        echo $string_cpu;
-                                        ?>
-                                    </li>
-                                    <li>
-                                        <?php
-                                        $string_ram = (strlen($values["RAM"]) > 4) ? substr($values["RAM"], 0, 6) . '...' : $values["RAM"];
-                                        $string_rom = (strlen($values["ROM"]) > 4) ? substr($values["ROM"], 0, 11) . '...' : $values["ROM"];
-                                        echo $string_ram . ' / ' . $string_rom;
-                                        ?>
-                                    </li>
-                                    <li>
-                                        <?php
-                                        $string_vga = (strlen($values["VGA"]) > 15) ? substr($values["VGA"], 0, 10) . '...' : $values["VGA"];
-                                        echo $string_vga;
-                                        ?>
-                                    </li>
-                                    <li>
-                                        <?= $values["man_hinh"] . ' ' ?> inch
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-center">
-                                    <h6 class="price"><?= number_format($values["don_gia"]) ?>đ</h6>
-                                    <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between bg-light border">
-                                <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
-                                <button class="btn btn-sm text-dark p-0 ">
+    </div>
+    <!-- sản phẩm liên quan -->
+    <div class="col-12">
+        <h6>sản phẩm liên quan</h6>
+        <div class="row pb-3">
+            <?php foreach ($related_sp as $values) : ?>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card product-item border-0 mb-4">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
+                                <h6 class="text-truncate mb-3">
                                     <?php
-                                    $id_user = 1;
-                                    $quantity = 1;
-                                    // if (isset($_SESSION['user_account']['user_id'])) {
-                                    //     $id_user = $_SESSION['user_account']['user_id'];
-                                    // }
+                                    $string_ten = (strlen($values["ten_sp"]) > 25) ? substr($values["ten_sp"], 0, 25) . '...' : $values["ten_sp"];
+                                    echo $string_ten;
                                     ?>
-                                    <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
-                                </button>
+                                </h6>
+                            </a>
+                            <ul class="ul_products list-unstyled">
+                                <li>
+                                    <?php
+                                    $string_cpu = (strlen($values["CPU"]) > 15) ? substr($values["CPU"], 0, 15) . '...' : $values["CPU"];
+                                    echo $string_cpu;
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $string_ram = (strlen($values["RAM"]) > 4) ? substr($values["RAM"], 0, 6) . '...' : $values["RAM"];
+                                    $string_rom = (strlen($values["ROM"]) > 4) ? substr($values["ROM"], 0, 11) . '...' : $values["ROM"];
+                                    echo $string_ram . ' / ' . $string_rom;
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $string_vga = (strlen($values["VGA"]) > 15) ? substr($values["VGA"], 0, 10) . '...' : $values["VGA"];
+                                    echo $string_vga;
+                                    ?>
+                                </li>
+                                <li>
+                                    <?= $values["man_hinh"] . ' ' ?> inch
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="price"><?= number_format($values["don_gia"]) ?>đ</h6>
+                                <h6 class="text-muted ml-2"><del>15.230.000đ</del></h6>
                             </div>
                         </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <span class="fs-6 text <?= $values["sl_luu_kho"] > 0 ? 'text-success' : 'text-danger' ?>"><i class="fa-solid fa-check"></i><?= $values["sl_luu_kho"] > 0 ? 'còn hàng' : 'hết hàng' ?></span>
+                            <button class="btn btn-sm text-dark p-0 ">
+                                <?php
+                                $id_user = 0;
+                                $quantity = 0;
+                                if (isset($_SESSION['user_account'])) {
+                                    $id_user = $_SESSION['user_account']['user_id'];
+                                    $quantity = 1;
+                                }
+                                ?>
+                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                            </button>
+                        </div>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
+    </div>
     </div>
     </div>
 
@@ -333,6 +340,7 @@
     <script src="<?= server_port ?>/du_an_1/public/mail/contact.js"></script>
     <!-- Template Javascript -->
     <script src="<?= server_port ?>/du_an_1/public/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -363,6 +371,17 @@
                 $(img.parentElement.previousElementSibling.querySelector('#input-element')).trigger('click');
             })
         })
+
+        $("#submit_form").on('click', (e) => {
+            var user_id = $("#submit_form").data('id_user')
+            if (user_id == 0) {
+                e.preventDefault();
+                swal("Cần phải có tài khoản để thực hiện bình luận sản phẩm!");
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+            }
+        })
     </script>
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -385,29 +404,37 @@
         });
     </script>
     <!-- ajax tao don -->
+    <script src="<?= server_port ?>du_an_1/public/js/ajax_cart_list.js"></script>
     <script>
-        var add_cart = document.querySelector('.submit');
+        var add_cart = document.querySelector('.submit_cart');
         add_cart.addEventListener('click', () => {
             const id_sp = $(add_cart).data('id')
             const user_id = $(add_cart).data('user')
             const quantity = $('.quantity_order').val();
             const option = $(add_cart).data('option')
-            $.ajax({
-                type: "POST",
-                url: "cart_lists",
-                data: {
-                    id_sp: id_sp,
-                    user_id: user_id,
-                    quantity: quantity,
-                    option: option
-                },
-                success: function(data) {
-                    $("html, body").animate({
-                        scrollTop: 0
-                    }, "slow");
-                    $(".cart_list").html(data);
-                }
-            });
+            if (user_id == 0) {
+                swal("Cần phải có tài khoản để mua hàng!");
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "cart_lists",
+                    data: {
+                        id_sp: id_sp,
+                        user_id: user_id,
+                        quantity: quantity,
+                        option: option
+                    },
+                    success: function(data) {
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, "slow");
+                        $(".cart_list").html(data);
+                    }
+                });
+            }
         })
     </script>
 

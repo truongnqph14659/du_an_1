@@ -51,7 +51,9 @@
                 </td>
                 <td>
                   <span class="badge badge-success"><a href="edit_acount?id=<?= $value['user_id'] ?>"><i class="fas fa-edit" style="color: #ffff;"></i></a></span>
-                  <span class="badge bg-danger" data-id="<?= $value['user_id'] ?>" style="cursor: pointer;"><i class="fa-solid fa-trash-can"></i></span>
+                  <?php if ($value['role'] == 0) : ?>
+                    <span class="badge bg-danger" data-id="<?= $value['user_id'] ?>" style="cursor: pointer;"><a href="remove_acount?id=<?= $value['user_id'] ?>"><i class="fa-solid fa-trash-can"></i></a></span>
+                  <?php endif; ?>
                 </td>
               </tr>
             <?php endforeach; ?>

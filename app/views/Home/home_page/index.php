@@ -215,7 +215,7 @@
                                     $quantity = 1;
                                 }
                                 ?>
-                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values['ma_san_pham'] ?>" data-user="<?= $id_user ?>" data-qty="<?= $quantity ?>"></i>
                             </button>
                         </div>
                     </div>
@@ -293,7 +293,7 @@
                                     $quantity = 1;
                                 }
                                 ?>
-                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values["ma_san_pham"] ?>" data-user="<?= $id_user ?>" data-qty=" <?= $quantity ?>"></i>
+                                <i class="fas fa-shopping-cart text-primary mr-1 <?= $values["sl_luu_kho"] > 0 ? 'submit' : '' ?>" type="submit" data-id="<?php echo $values["ma_san_pham"] ?>" data-user="<?= $id_user ?>" data-qty="<?= $quantity ?>"></i>
                             </button>
                         </div>
                     </div>
@@ -466,7 +466,22 @@
         unset($_SESSION["check_success"]);
         ?>
     <?php endif ?>
-
+    <?php if (isset($_SESSION["register"])) : ?>
+        <script>
+            swal("Xin chào!", "Đăng ký tài khoản thành công, hãy đăng nhập để mua sắm", "success");
+        </script>
+        <?php
+        unset($_SESSION["register"]);
+        ?>
+    <?php endif ?>
+    <?php if (isset($_SESSION['repass'])) : ?>
+        <script>
+            swal("Xin chào!", "Thay đổi mật khẩu thành công, hãy đăng nhập để mua sắm", "success");
+        </script>
+        <?php
+        unset($_SESSION['repass']);
+        ?>
+    <?php endif ?>
 
 </body>
 

@@ -54,19 +54,19 @@
                 <!-- Nav Item - Dashboard -->
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="user_info">
+                    <a class="nav-item collapsed" href="user_info">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Thông tin cá nhân</span>
                     </a>
                 </li>
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="re_password">
+                    <a class="nav-item" href="re_password">
                         <i class="fas fa-fw fa-chart-area"></i>
                         <span>Đổi mật khẩu</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ql_order_user">
+                    <a class="nav-link" href="user_page">
                         <i class="fas fa-fw fa-chart-area"></i>
                         <span>Quản lý đơn hàng</span></a>
                 </li>
@@ -124,7 +124,13 @@
                         ?>
                         <div class="styles__StyledOrderInfo-sc-1upbws9-0 hBZYMQ">
                             <div>
+                                <?php
+                                $tong = 0;
+                                ?>
                                 <?php foreach ($values as $values) : ?>
+                                    <?php
+                                    $tong += $values['thanh_tien'];
+                                    ?>
                                     <div class="product">
                                         <div class="detail">
                                             <div class="product-img" style="background-image: url(&quot;<?= $values['images_sp'] ?>&quot;);"><span class="quantity">x<?= $values['so_luong'] ?></span></div>
@@ -141,7 +147,7 @@
                         <div class="styles__OrderFooter-sc-1vf2n1c-2 hBVEFq">
                             <div class="total-money">
                                 <div class="title">Tổng tiền:</div>
-                                <div class="total"><?= number_format($values['thanh_tien']) ?> ₫</div>
+                                <div class="total"><?= number_format($tong) ?>₫</div>
                             </div>
                             <div class="button-group">
                                 <div> <a href="" class="text-dark text-decoration-none">Mua lại</a> </div>

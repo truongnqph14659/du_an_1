@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="<?= server_port ?>/du_an_1/public/img/favicon.ico" rel="icon">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -28,44 +27,31 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap");
     </style>
-    <link rel="stylesheet" href="<?= server_port ?>/du_an_1/public/css/forgot_pass.css">
+    <link rel="stylesheet" href="<?= server_port ?>/du_an_1/public/css/register.css">
 </head>
 
 <body>
     <?php
     require_once './vender/file_extends/header.php';
     ?>
-    <section>
-        <!--Bắt Đầu Phần Nội Dung-->
-        <div class="noi-dung">
-            <div class="form">
-                <h2>Quên Mật Khẩu</h2>
-                <form action="">
-                    <div class="input-form">
-                        <span>your email</span>
-                        <input type="text" name="">
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">lấy lại mật khẩu qua email của bạn...</h2>
                     </div>
-                    <div class="input-form">
-                        <span>your new password</span>
-                        <input type="password" name="">
+                    <div class="signup-image">
+                        <figure><img src="<?= server_port ?>du_an_1/public/images_stores/images/signup-image.jpg" alt="sing up image"></figure>
                     </div>
-                    <div class="input-form">
-                        <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Submit</button>
-                    </div>
+                </div>
             </div>
-        </div>
-        <!--Kết Thúc Phần Nội Dung-->
-        <!--Bắt Đầu Phần Hình Ảnh-->
-        <div class="img-bg">
-            <img src="https://th.bing.com/th/id/R.3865208af2d9c95656e5fe3e430d2bb4?rik=37afYGUvcJ%2fiKg&pid=ImgRaw&r=0" alt="Hình Ảnh Minh Họa">
-        </div>
-        <!--Kết Thúc Phần Hình Ảnh-->
-    </section>
-
-    <?php
-    require_once './vender/file_extends/footer.php';
-    ?>
-
+        </section>
+        <?php
+        require_once './vender/file_extends/footer.php';
+        ?>
 </body>
 
 </html>

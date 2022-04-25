@@ -26,8 +26,10 @@
                 <?= $_SESSION["user_account"]['user_name'] ?>
             </span>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item text-dark" href="user_info">tài khoản của tôi</a></li>
-                <li><a class="dropdown-item text-dark" href="forgot_pass">đổi mật khẩu</a></li>
+                <?php if ($_SESSION["user_account"]['user_role'] == 0) : ?>
+                    <li><a class="dropdown-item text-dark" href="user_page">tài khoản của tôi</a></li>
+                    <li><a class="dropdown-item text-dark" href="forgot_pass">đổi mật khẩu</a></li>
+                <?php endif; ?>
                 <li><a class="dropdown-item text-dark" href="logn_out">đăng xuất</a></li>
             </ul>
         </div>

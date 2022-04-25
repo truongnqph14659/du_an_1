@@ -216,7 +216,6 @@ class AdminController extends BaseModel
     static function update_status()
     {
         require_once './app/controller/Update_Data/update_status.php';
-        include './app/views/admin/component/Order/Order.php';
     }
     // 
     static function order_details()

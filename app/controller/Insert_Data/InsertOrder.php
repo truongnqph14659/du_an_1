@@ -57,8 +57,7 @@ class create_order extends BaseModel
                  <h3>Tổng thanh toán:" . number_format($tong) . "đ</h3>
                 ";
         $d = $a . $b . $c . $h;
-        echo $d;
-        $email = 'truongrubi717@gmail.com';
+        $email = $_SESSION['user_account']['user_email'];
         include 'public/Email/library.php'; // include the library file
         require_once 'public/Email/vendor/autoload.php';
         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
@@ -81,11 +80,9 @@ class create_order extends BaseModel
             //                    $mail->addBCC('BCCemail@gmail.com');
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = "Xác nhận đơn hàng #$id_order";
-
             $mail->Body = $d;
             $mail->AltBody = 'cảm ỏn'; //None HTML
             $result = $mail->send();
-            echo 'gửi thành công';
         } catch (Exception $e) {
             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }

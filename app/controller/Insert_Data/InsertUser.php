@@ -3,7 +3,7 @@ require_once './app/models/BaseModel.php';
 require_once './vender/reuse_function.php';
 if (isset($_POST['submit'])) {
     extract($_POST);
-    $default_avatar = "http://localhost/du_an_1/public/images_stores/img/logo_user.png";
+    $default_avatar = "public/images_stores/img/logo_user.png";
     $image_user = $_FILES['avatar']['size'] > 0 ? insert_img($_FILES['avatar']) : $default_avatar;
     $hash_pass = password_hash($password, PASSWORD_DEFAULT);
     $form_value = "'$name','$email','$hash_pass','$image_user','$sdt','$dia_chi','$xa_phuong','$quan_huyen','$tinh_thanh','$vai_tro','$status'";

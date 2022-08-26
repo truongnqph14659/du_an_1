@@ -319,7 +319,7 @@
                 </div>
                 <div class="form-group">
                   <label for="">nhập vào tên loại</label>
-                  <input type="text" name="category_name" value="<?= $ma_loai_sp[0]['ten_loai'] ?>" id="category_name" class="form-control">
+                  <input type="text" name="category_name" value="<?= $ma_loai_sp['ten_loai'] ?>" id="category_name" class="form-control">
                 </div>
                 <div class="form-group">
                   <input type="submit" name="action" id="action" class="btn btn-info" value="add">
@@ -352,9 +352,9 @@
         fill_category()
 
         function fill_category() {
-          const ma_loai_sp = <?= $ma_loai_sp[0]['ma_loai_sp'] ?>;
-          const parent_id = <?= $ma_loai_sp[0]['parent_id'] ?>;
-          const name_loai = "<?= $ma_loai_sp[0]['ten_loai'] ?>";
+          const ma_loai_sp = <?= $ma_loai_sp['ma_loai_sp'] ?>;
+          const parent_id = <?= $ma_loai_sp['parent_id'] ?>;
+          const name_loai = "<?= $ma_loai_sp['ten_loai'] ?>";
           $.ajax({
             url: 'fill_category',
             method: 'POST',
